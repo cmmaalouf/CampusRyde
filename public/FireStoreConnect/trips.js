@@ -21,14 +21,14 @@ $("#submitUser").on("click", function(event) {
   var newLastName = $("#newLastName").val().trim();
   var newPassword = $("#newPassword").val().trim();
 
-  var newUser = {
-    email: newEmail,
-    fname: newFirstName,
+  var newTrip = {
+    address: newAddress,
+    desc: newdesc,
     lname: newLastName,
     pwd: newPassword
   };
 
-  database.ref("users").push(newUser);
+  database.ref("trips").push(newUser);
 
   console.log(newUser.email);
   console.log(newUser.fname);
