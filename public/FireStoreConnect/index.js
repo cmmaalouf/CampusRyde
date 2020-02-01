@@ -80,9 +80,10 @@ $("#loginSubmit").on("click", function(event) {
 
 
   var ref = database.ref(); ref.child('users').orderByChild('email').equalTo(newEmail).once("value", function(snapshot) {
-    var user = snapshot.val());
+    var user = snapshot.val();
     var key = Object.keys(user);
     console.log(user, key)
+    alert("Hello! I am an alert box!!"+user+key);
 });
 
 });
