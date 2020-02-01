@@ -76,14 +76,16 @@ $("#loginSubmit").on("click", function(event) {
 
   // Grabs user input
   var newEmail = $("#userEmail").val().trim();
-  var newFirstName = $("#userPassword").val().trim();
+  var newPassword = $("#userPassword").val().trim();
 
 
   var ref = database.ref(); ref.child('users').orderByChild('email').equalTo(newEmail).once("value", function(snapshot) {
     var user = snapshot.val();
-    var key = Object.keys(user);
-    console.log(user, key)
-    alert("Hello! I am an alert box!!"+user+key);
+    var key = Object.keys(user)[0];
+    if (user[key].pwd.equalTo(newPassword)){
+      alert("Hello! I am an alert box!!"+user+key);
+    }
+    alert("Hello! I am a");
 });
 
 });
