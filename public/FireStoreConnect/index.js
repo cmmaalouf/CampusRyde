@@ -24,6 +24,7 @@ var firebaseConfig = {
   apiKey: "REMOVED",
   authDomain: "REMOVED.firebaseapp.com",
   databaseURL: "https://REMOVED.firebaseio.com",
+  projectId: "REMOVED",
   storageBucket: "REMOVED.appspot.com"
 };
 
