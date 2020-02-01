@@ -80,8 +80,8 @@ $("#loginSubmit").on("click", function(event) {
 
 
   var ref = database.ref(); ref.child('users').orderByChild('email').equalTo(newEmail).once("value", function(snapshot) {
-    console.log(snapshot.val());
-  
+    console.log(type(snapshot);
+
 });
 
 });
