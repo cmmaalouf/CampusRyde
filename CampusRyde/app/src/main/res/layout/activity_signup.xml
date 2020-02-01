@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/signUpText"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Sign Up"
+        android:textSize="50dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textStyle="italic">
+    </TextView>
+
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:text="Back"
+        android:onClick="toLogin"
+        >
+
+    </Button>
+
+
+    <EditText
+        android:id="@+id/firstName"
+        style="@style/SignUpButtons"
+        android:hint="First Name"
+        android:layout_above="@id/lastName"
+        android:background="@color/colorPrimaryDark"
+        >
+    </EditText>
+
+    <EditText
+        android:id="@+id/lastName"
+        style="@style/SignUpButtons"
+        android:hint="Last Name"
+        android:layout_above="@+id/schoolEmail"
+        android:background="@color/colorPrimary">
+    </EditText>
+
+
+
+
+
+    <EditText
+        android:id="@+id/schoolEmail"
+        style="@style/SignUpButtons"
+        android:hint="School Email"
+        android:background="@color/colorPrimaryDark"
+        android:layout_centerInParent="true">
+    </EditText>
+
+    <EditText
+        android:id="@+id/schoolName"
+        style="@style/SignUpButtons"
+        android:hint="School Name"
+        android:layout_below="@+id/schoolEmail"
+        android:background="@color/colorPrimary">
+
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/password"
+        style="@style/SignUpButtons"
+        android:hint="Password"
+        android:layout_below="@id/schoolName"
+        android:background="@color/colorPrimaryDark"
+        >
+    </EditText>
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/password"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:text="Sign Up">
+
+    </Button>
+
+</RelativeLayout>
