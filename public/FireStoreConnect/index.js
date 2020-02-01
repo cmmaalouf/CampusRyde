@@ -82,7 +82,7 @@ $("#loginSubmit").on("click", function(event) {
   var ref = database.ref(); ref.child('users').orderByChild('email').equalTo(newEmail).once("value", function(snapshot) {
     var user = snapshot.val();
     var key = Object.keys(user)[0];
-    if (user[key].pwd.equalTo(newPassword)){
+    if (user[key].pwd == newPassword){
       alert("Hello! I am an alert box!!"+user+key);
     }
     alert("Hello! I am a");
