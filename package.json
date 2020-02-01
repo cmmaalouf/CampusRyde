@@ -8,7 +8,9 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "@google-cloud/storage": "^4.3.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^8.9.2"
   },
   "engines": {
     "node": "10.x"
