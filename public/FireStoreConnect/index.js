@@ -84,7 +84,7 @@ $("#loginSubmit").on("click", function(event) {
       document.getElementById("invalid-msg").className = "text-danger";
       event.preventDefault();
     }
-
+    window.location.href = "../ride.html?userId="+user;
 });
 
 });
