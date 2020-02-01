@@ -76,11 +76,15 @@ $("#loginSubmit").on("click", function(event) {
 
   // Grabs user input
   var newEmail = $("#userEmail").val().trim();
-  var newFirstName = $("#userPassword").val().trim();
+  var newPassword = $("#userPassword").val().trim();
 
 
   var ref = database.ref(); ref.child('users').orderByChild('email').equalTo(newEmail).once("value", function(snapshot) {
-    console.log(type(snapshot));
+    var user = snapshot.val();
+    var key = Object.keys(user)[0];
+    if (user[key].pwd != newPassword){
+      event.preventDefault();
+    }
 
 });
 
