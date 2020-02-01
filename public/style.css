@@ -1,0 +1,83 @@
+/* styles */
+/* called by your view template */
+
+@media (min-width: 768px) {
+  .h-md-100 { height: 100vh; }
+}
+.btn-round { border-radius: 30px; }
+.bg-indigo {
+background-image: url("https://cdn.glitch.com/a81a66dd-1b37-47b9-9b23-66df1f5552cb%2Faction-asphalt-automobile-automotive-593172%20(2).jpg?v=1580349408846");
+background-position: center; /* Center the image */
+background-repeat: no-repeat; /* Do not repeat the image */
+background-size: cover; /* Resize the background image to cover the entire container */
+}
+.text-cyan { color: #35bdff; }
+
+.come-in {
+transform: translateY(150px);
+animation: come-in 0.8s ease forwards;
+}
+.come-in:nth-child(odd) {
+animation-duration: 0.6s; /* So they look staggered */
+}
+
+@keyframes come-in {
+to { transform: translateY(0); }
+}
+
+.module {
+width: 48%;
+min-height: 200px;
+background: white;
+position: relative;
+float: left;
+padding: 20px;
+margin-right: 4%;
+margin-bottom: 4%;
+&:nth-child(even) {
+  margin-right: 0;
+}
+box-shadow: 0 1px 3px rgba(black, 0.2);
+}
+
+.ml5 {
+position: relative;
+font-weight: 400;
+font-size: 4.5em;
+color: white;
+}
+
+.ml5 .text-wrapper {
+position: relative;
+display: inline-block;
+padding-top: 0.1em;
+padding-right: 0.05em;
+padding-bottom: 0.15em;
+line-height: 1em;
+}
+
+.ml5 .line {
+position: absolute;
+left: 0;
+top: 0;
+bottom: 0;
+margin: auto;
+height: 3px;
+width: 100%;
+background-color: white;
+transform-origin: 0.5 0;
+}
+
+.ml5 .ampersand {
+font-family: Baskerville, "EB Garamond", serif;
+font-style: italic;
+font-weight: 500;
+width: 1em;
+margin-right: -0.1em;
+margin-left: -0.1em;
+}
+
+.ml5 .letters {
+display: inline-block;
+opacity: 0;
+}
