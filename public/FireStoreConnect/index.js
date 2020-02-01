@@ -11,7 +11,7 @@ admin.initializeApp({
 
 let db = admin.firestore();
 */
-
+/*
 // Firebase App (the core Firebase SDK) is always required and
 // must be listed before other Firebase SDKs
 var firebase = require("firebase/app");
@@ -19,7 +19,7 @@ var firebase = require("firebase/app");
 // Add the Firebase products that you want to use
 require("firebase/auth");
 require("firebase/firestore");
-
+*/
 var firebaseConfig = {
   apiKey: "AIzaSyBT3OJGVbazBLVUQm_YXQWZNN5rvmWwLjU",
   authDomain: "astral-depth-266901.firebaseapp.com",
