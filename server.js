@@ -30,7 +30,7 @@ app.get("/signup", function(request, response) {
   response.sendFile(__dirname + "/views/signup.html");
 });
 
-app.get("/ride", function(request, response) {
+app.get("/ride/:", function(request, response) {
   response.sendFile(__dirname + "/views/ride.html");
 });
 
