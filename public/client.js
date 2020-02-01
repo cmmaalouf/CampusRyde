@@ -1,3 +1,22 @@
+// $("#ridePrompt").hide();
+$("#driverPrompt").hide();
+
+$( "#driverButton" ).click(function() {
+  $("#ridePrompt").hide();
+  $("#driverPrompt").show();
+});
+
+$( "#driverBack" ).click(function() {
+  $("#ridePrompt").show();
+  $("#driverPrompt").hide();
+});
+
+$( "#loginButton" ).click(function() {
+  var userEmail = $("#userEmail").text();
+  var userPass = $("#userPassword").text();
+  $("#loginSubmit").click();
+});
+
 // client-side js
 // run by the browser each time your view template referencing it is loaded
 

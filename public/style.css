@@ -6,10 +6,11 @@
 }
 .btn-round { border-radius: 30px; }
 .bg-indigo {
-background-image: url("https://cdn.glitch.com/a81a66dd-1b37-47b9-9b23-66df1f5552cb%2Faction-asphalt-automobile-automotive-593172%20(2).jpg?v=1580349408846");
+background: url("https://cdn.glitch.com/a81a66dd-1b37-47b9-9b23-66df1f5552cb%2Faction-asphalt-automobile-automotive-593172%20(2).jpg?v=1580349408846");
 background-position: center; /* Center the image */
 background-repeat: no-repeat; /* Do not repeat the image */
-background-size: cover; /* Resize the background image to cover the entire container */
+background-size: cover; /* Resize the background image to cover the entire container */ */
+/* background-attachment: fixed; */
 }
 .text-cyan { color: #35bdff; }
 
