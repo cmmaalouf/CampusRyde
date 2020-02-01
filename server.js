@@ -35,7 +35,7 @@ app.get("/ride", function(request, response) {
 });
 
 app.get('/ride/:userId', function (req, res) {
-  res.send(req.params)
+  response.sendFile(__dirname + "/views/ride.html?userId="+req.params)
 })
 
 app.get("/ride/board", function(request, response) {

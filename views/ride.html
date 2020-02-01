@@ -84,19 +84,41 @@
         </div>
       </div>
 
-      <div id="driverPrompt" class="borderMe">
-        <h3 class="text-center">More info about you...</h3>
-        <br>
-        <form>
-          <div class="form-group row">
-            <label class="col-sm-5 col-form-label col-form-label-sm" for="plateNumber">License Plate Number</label>
-            <input type="text" class="col-sm-6 form-control form-control-sm" id="plateNumber"
-              placeholder="License Plate Number">
-          </div>
-          <div class="form-group row">
-            <label class="col-sm-5 col-form-label col-form-label-sm" for="driverLicense">Driver's Licence</label>
-            <input type="text" class="col-sm-6 form-control form-control-sm" placeholder="Driver's License"
-              id="driverLicense">
+        <div id="driverPrompt" class="borderMe">
+          <h3 class="text-center">More info about you...</h3>
+          <br>
+          <form>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="plateNumber">License Plate Number</label>
+              <input type="text" class="col-sm-6 form-control form-control-sm" id="plateNumber" placeholder="License Plate Number">
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="driverLicense">Driver's Licence</label>
+              <input type="text" class="col-sm-6 form-control form-control-sm" placeholder="Driver's License" id="driverLicense">
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="departDate">Departure Date</label>
+              <input type="date" class="col-sm-6 form-control form-control-sm" id="departDate">
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="departTime">Departure Time</label>
+              <input type="time" class="col-sm-6 form-control form-control-sm" id="departTime">
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="numSeats">Available Seats</label>
+              <input type="number" class="col-sm-6 form-control form-control-sm" id="numSeats" placeholder="1">
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="other">Other Requirements</label>
+              <textarea class="col-sm-6 form-control form-control-sm" id="other" rows="3" placeholder="Contribute money for gas..."></textarea>
+            </div>
+            <input type="hidden" name="userId" value=<script type="text/javascript">
+              var currentLocation = window.location;
+            </script>>
+          </form>
+          <div class="text-center">
+            <button id="driverBack" type="button" class="btn btn-secondary" style="margin-right: 10px;">Back</button>
+            <a class="btn btn-success" style="margin-left: 10px;" id="tripSubmit" href="/ride/board" role="button">Submit</a>
           </div>
           <div class="form-group row">
             <label class="col-sm-5 col-form-label col-form-label-sm" for="departDate">Departure Date</label>

@@ -71,7 +71,6 @@ $("#submitUser").on("click", function(event) {
 
 //login
 $("#loginSubmit").on("click", function(event) {
-
   // Grabs user input
   var newEmail = $("#userEmail").val().trim();
   var newPassword = $("#userPassword").val().trim();
@@ -85,10 +84,8 @@ $("#loginSubmit").on("click", function(event) {
       event.preventDefault();
     }
     else{
-      app.get('/ride/:userId', function (req, res) {
-        res.send(req.params)
-      })
-    //window.location.href = "/ride/:userId";
+
+    window.location.href = "/ride/"+key;
     }
 });
 
