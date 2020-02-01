@@ -85,7 +85,7 @@ $("#loginSubmit").on("click", function(event) {
       event.preventDefault();
     }
     else{
-    window.location.href = "../ride.html?userId="+key;
+    window.location.href = "../views/ride.html?userId="+key;
     }
 });
 
