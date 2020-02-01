@@ -24,19 +24,21 @@ $("#submitUser").on("click", function(event) {
   var newTrip = {
     address: newAddress,
     desc: newdesc,
-    lname: newLastName,
-    pwd: newPassword
+    coords: newCoords,
+    date: newDate,
+    time: newTime
   };
 
-  database.ref("trips").push(newUser);
+  database.ref("trips").push(newTrip);
 
-  console.log(newUser.email);
-  console.log(newUser.fname);
-  console.log(newUser.lname);
-  console.log(newUser.pwd);
+  console.log(newTrip.address);
+  console.log(newTrip.desc);
+  console.log(newTrip.coords);
+  console.log(newTrip.date);
+  console.log(newTrip.time);
 
   // Alert
-  alert("User successfully added");
+  alert("Trip successfully added");
 
   // Clears all of the text-boxes
   $("#newEmail").val("");
