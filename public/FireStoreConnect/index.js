@@ -31,7 +31,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-
+//New User
 var database = firebase.database();
 $("#submitUser").on("click", function(event) {
   // Prevent the default form submit behavior
@@ -50,12 +50,43 @@ $("#submitUser").on("click", function(event) {
     pwd: newPassword
   };
 
-  database.ref().push(newUser);
+  database.ref("users").push(newUser);
 
   console.log(newUser.email);
   console.log(newUser.fname);
   console.log(newUser.lname);
   console.log(newUser.pwd);
+
+  // Alert
+  alert("User successfully added");
+
+  // Clears all of the text-boxes
+  $("#newEmail").val("");
+  $("#destination-input").val("");
+  $("#first-train-input").val("");
+  $("#frequency-input").val("");
+});
+
+
+
+//login
+$("#loginSubmit").on("click", function(event) {
+  // Prevent the default form submit behavior
+  event.preventDefault();
+
+  // Grabs user input
+  var newEmail = $("#userEmail").val().trim();
+  var newFirstName = $("#userPassword").val().trim();
+
+
+
+
+  var ref = database.ref("users");
+  ref.orderByChild("email").limitToFirst().on("child_added", function(snapshot) {
+    console.log(snapshot.key);
+  });
+
+
 
   // Alert
   alert("User successfully added");
