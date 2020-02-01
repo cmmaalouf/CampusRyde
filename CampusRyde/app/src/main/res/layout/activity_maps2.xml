@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <EditText
+        android:id="@+id/searchDest"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:hint="Where To?"
+
+        android:layout_marginTop="20dp"
+        ></EditText>
+
+    <Button
+        android:id="@+id/drive"
+        android:layout_width="205dp"
+        android:layout_height="75dp"
+
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimaryDark"
+        android:text="Drive">
+    </Button>
+    <Button
+        android:id="@+id/tagalong"
+        android:layout_width="205dp"
+        android:layout_height="75dp"
+        android:layout_below="@+id/map"
+        android:layout_toRightOf="@+id/drive"
+        android:layout_alignParentBottom="true"
+        android:background="@color/colorPrimary"
+        android:text="Tag-a-long">
+    </Button>
+
+
+<fragment
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:id="@+id/map"
+    android:layout_below="@id/searchDest"
+    android:layout_above="@id/drive"
+    class="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="500dp"
+
+
+
+    />
+
+
+
+</RelativeLayout>
