@@ -43,13 +43,13 @@
 </head>
 
 <body>
-  <div class="d-md-flex h-md-100 align-items-center">
 
-    <!-- First Half (map)-->
+  <!-- First Half (map)-->
 
-    <div class="col-md-6 p-0 bg-indigo h-md-100">
-      <div class="text-white d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
-        <div class="logoarea pt-5 pb-5">
+  <div class="split left">
+    <div class="centered">
+      <div class="text-white align-items-center text-center">
+        <div class="logoarea">
           <h1 class="ml5">
             <span class="text-wrapper">
               <span class="line line1"></span>
@@ -60,66 +60,70 @@
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Second Half -->
+  <!-- Second Half -->
 
-    <div class="col-md-6 p-0 bg-white h-md-100 loginarea">
-      <div class="align-items-center h-md-100 p-5 justify-content-center">
-        <div id="ridePrompt" class="my-auto" style="border: 1px solid black; padding: 20px; border-radius: 5px;">
-          <h3 class="text-center">Where to?</h3>
-          <br>
-          <form>
-            <div class="form-group row">
-              <label class="col-sm-2 col-form-label col-form-label-sm" for="address">Address</label>
-              <input type="text" class="col-sm-9 form-control form-control-sm" placeholder="Ex: 123 Main Street, Baltimore, Maryland" id="address">
-            </div>
-          </form>
-          <div class="text-center">
-            <br>
-            <button id="driverButton" type="button" class="btn btn-success" style="margin-right: 10px;">Driver</button>
-            <a class="btn btn-info" href="/ride/board" role="button" style="margin-left: 10px;">Tagalong</a>
-<!--             <button type="button" class="btn btn-info" style="margin-left: 10px;">Tagalong</button> -->
+  <div class="split right">
+    <div class="centered">
+      <div id="ridePrompt" class="borderMe">
+        <h3 class="text-center">Where to?</h3>
+        <br>
+        <form>
+          <div class="form-group row">
+            <label class="col-sm-2 col-form-label col-form-label-sm" for="address">Address</label>
+            <input type="text" class="col-sm-9 form-control form-control-sm"
+              placeholder="Ex: 123 Main Street, Baltimore, Maryland" id="address">
           </div>
+        </form>
+        <div class="text-center">
+          <br>
+          <button id="driverButton" type="button" class="btn btn-success" style="margin-right: 10px;">Driver</button>
+          <a class="btn btn-info" href="/ride/board" role="button" style="margin-left: 10px;">Tagalong</a>
+          <!--             <button type="button" class="btn btn-info" style="margin-left: 10px;">Tagalong</button> -->
         </div>
+      </div>
 
-        <div id="driverPrompt" class="my-auto" style="border: 1px solid black; padding: 20px; border-radius: 5px;">
-          <h3 class="text-center">More info about you...</h3>
-          <br>
-          <form>
-            <div class="form-group row">
-              <label class="col-sm-5 col-form-label col-form-label-sm" for="plateNumber">License Plate Number</label>
-              <input type="text" class="col-sm-6 form-control form-control-sm" id="plateNumber" placeholder="License Plate Number">
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-5 col-form-label col-form-label-sm" for="driverLicense">Driver's Licence</label>
-              <input type="text" class="col-sm-6 form-control form-control-sm" placeholder="Driver's License" id="driverLicense">
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-5 col-form-label col-form-label-sm" for="departDate">Departure Date</label>
-              <input type="date" class="col-sm-6 form-control form-control-sm" id="departDate">
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-5 col-form-label col-form-label-sm" for="departTime">Departure Time</label>
-              <input type="time" class="col-sm-6 form-control form-control-sm" id="departTime">
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-5 col-form-label col-form-label-sm" for="numSeats">Available Seats</label>
-              <input type="number" class="col-sm-6 form-control form-control-sm" id="numSeats" placeholder="1">
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-5 col-form-label col-form-label-sm" for="other">Other Requirements</label>
-              <textarea class="col-sm-6 form-control form-control-sm" id="other" rows="3" placeholder="Contribute money for gas..."></textarea>
-            </div>
-          </form>
-          <div class="text-center">
-            <button id="driverBack" type="button" class="btn btn-secondary" style="margin-right: 10px;">Back</button>
-            <a class="btn btn-success" style="margin-left: 10px;" href="/ride/board" role="button">Submit</a>
+      <div id="driverPrompt" class="borderMe">
+        <h3 class="text-center">More info about you...</h3>
+        <br>
+        <form>
+          <div class="form-group row">
+            <label class="col-sm-5 col-form-label col-form-label-sm" for="plateNumber">License Plate Number</label>
+            <input type="text" class="col-sm-6 form-control form-control-sm" id="plateNumber"
+              placeholder="License Plate Number">
           </div>
+          <div class="form-group row">
+            <label class="col-sm-5 col-form-label col-form-label-sm" for="driverLicense">Driver's Licence</label>
+            <input type="text" class="col-sm-6 form-control form-control-sm" placeholder="Driver's License"
+              id="driverLicense">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-5 col-form-label col-form-label-sm" for="departDate">Departure Date</label>
+            <input type="date" class="col-sm-6 form-control form-control-sm" id="departDate">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-5 col-form-label col-form-label-sm" for="departTime">Departure Time</label>
+            <input type="time" class="col-sm-6 form-control form-control-sm" id="departTime">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-5 col-form-label col-form-label-sm" for="numSeats">Available Seats</label>
+            <input type="number" class="col-sm-6 form-control form-control-sm" id="numSeats" placeholder="1">
+          </div>
+          <div class="form-group row">
+            <label class="col-sm-5 col-form-label col-form-label-sm" for="other">Other Requirements</label>
+            <textarea class="col-sm-6 form-control form-control-sm" id="other" rows="3"
+              placeholder="Contribute money for gas..."></textarea>
+          </div>
+        </form>
+        <div class="text-center">
+          <button id="driverBack" type="button" class="btn btn-secondary" style="margin-right: 10px;">Back</button>
+          <a class="btn btn-success" style="margin-left: 10px;" href="/ride/board" role="button">Submit</a>
         </div>
       </div>
     </div>
-
   </div>
+
 
 </body>
 
