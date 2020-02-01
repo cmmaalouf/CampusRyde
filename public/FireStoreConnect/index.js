@@ -80,7 +80,7 @@ $("#loginSubmit").on("click", function(event) {
 
 
   var ref = database.ref();
-  var  result = ref.child('users').orderByChild('email').once("value", function(snapshot) {
+  var  result = ref.child('users').orderByChild('email').equalTo(newEmail).once("value", function(snapshot) {
     console.log(snapshot.val());
     snapshot.forEach(function(data) {
         console.log(data.key);
