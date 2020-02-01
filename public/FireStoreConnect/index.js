@@ -37,18 +37,10 @@ $("#submitUser").on("click", function(event) {
   event.preventDefault();
 
   // Grabs user input
-  var newEmail = $("#newEmail")
-    .val()
-    .trim();
-  var newFirstName = $("#newFirstName")
-    .val()
-    .trim();
-  var newLastName = $("#newLastName")
-    .val()
-    .trim();
-  var newPassword = $("#newPassword")
-    .val()
-    .trim();
+  var newEmail = $("#newEmail").val().trim();
+  var newFirstName = $("#newFirstName").val().trim();
+  var newLastName = $("#newLastName").val().trim();
+  var newPassword = $("#newPassword").val().trim();
 
   var newUser = {
     email: newEmail,
