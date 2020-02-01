@@ -62,20 +62,29 @@
 
     <div class="col-md-6 p-0 bg-white h-md-100 loginarea">
       <div class="align-items-center h-md-100 p-5 justify-content-center">
-        <h3 class="text-center">Welcome to CampusRyde!</h3>
-        <h5 class="text-center">Find your school below</h5>
-        <form>
-          <fieldset>
-            <legend></legend>
+        <div class="my-auto" style="border: 1px solid black; padding: 20px; border-radius: 5px;">
+          <h3 class="text-center">Welcome to CampusRyde!</h3>
+          <form>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-                placeholder="Enter email">
-              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+              <label class="col-form-label col-form-label-sm" for="newEmail">College Email</label>
+              <input type="email" class="form-control form-control-sm" id="newEmail" aria-describedby="emailHelp"
+                placeholder="Email">
+              <label class="col-form-label col-form-label-sm" for="newFirstName">First Name</label>
+              <input type="text" class="form-control form-control-sm" placeholder="Fist Name" id="newFirstName">
+              <label class="col-form-label col-form-label-sm" for="newLastName">Last Name</label>
+              <input type="text" class="form-control form-control-sm" placeholder="Last Name" id="newLastName">
+              <label class="col-form-label col-form-label-sm" for="newPassword">Password</label>
+              <input type="password" class="form-control form-control-sm" id="newPassword" placeholder="Password">
+              <label class="col-form-label col-form-label-sm" for="newPasswordConfirm">Confirm Password</label>
+              <input type="password" class="form-control form-control-sm" id="newPasswordConfirm"
+                placeholder="Confirm Password">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </fieldset>
-        </form>
+          </form>
+          <div class="text-center">
+            <a class="btn btn-secondary" href="/" role="button">Back</a>
+            <a class="btn btn-primary" href="/ride" role="button">Submit</a>
+          </div>
+        </div>
       </div>
     </div>
 
