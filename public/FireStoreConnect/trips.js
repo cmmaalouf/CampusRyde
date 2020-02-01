@@ -11,11 +11,12 @@ firebase.initializeApp(firebaseConfig);
 
 //New User
 var database = firebase.database();
-$("#submitUser").on("click", function(event) {
+$("#tripSubmit").on("click", function(event) {
   // Prevent the default form submit behavior
   event.preventDefault();
 
   // Grabs user input
+
   var newEmail = $("#newEmail").val().trim();
   var newFirstName = $("#newFirstName").val().trim();
   var newLastName = $("#newLastName").val().trim();

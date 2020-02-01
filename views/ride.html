@@ -40,6 +40,7 @@
 
   <!-- import the webpage's client-side javascript file -->
   <script src="/client.js" defer></script>
+  <script src="../FireStoreConnect/trips.js" defer></script>
 </head>
 
 <body>
@@ -70,8 +71,12 @@
           <br>
           <form>
             <div class="form-group row">
-              <label class="col-sm-2 col-form-label col-form-label-sm" for="address">Address</label>
-              <input type="text" class="col-sm-9 form-control form-control-sm" placeholder="Ex: 123 Main Street, Baltimore, Maryland" id="address">
+              <label class="col-sm-2 col-form-label col-form-label-sm" for="address">City</label>
+              <input type="text" class="col-sm-9 form-control form-control-sm" placeholder="Baltimore" id="address">
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-2 col-form-label col-form-label-sm" for="address">State</label>
+              <input type="text" class="col-sm-9 form-control form-control-sm" placeholder="MD" id="address">
             </div>
           </form>
           <div class="text-center">
@@ -86,6 +91,11 @@
           <h3 class="text-center">More info about you...</h3>
           <br>
           <form>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label col-form-label-sm" for="userEmail">Email</label>
+              <input type="email" class="col-sm-8 form-control form-control-sm" id="userEmail" aria-describedby="emailHelp"
+                placeholder="Email">
+            </div>
             <div class="form-group row">
               <label class="col-sm-5 col-form-label col-form-label-sm" for="plateNumber">License Plate Number</label>
               <input type="text" class="col-sm-6 form-control form-control-sm" id="plateNumber" placeholder="License Plate Number">
@@ -110,9 +120,6 @@
               <label class="col-sm-5 col-form-label col-form-label-sm" for="other">Other Requirements</label>
               <textarea class="col-sm-6 form-control form-control-sm" id="other" rows="3" placeholder="Contribute money for gas..."></textarea>
             </div>
-            <input type="hidden" name="userId" value=<script type="text/javascript">
-              var currentLocation = window.location;
-            </script>>
           </form>
           <div class="text-center">
             <button id="driverBack" type="button" class="btn btn-secondary" style="margin-right: 10px;">Back</button>
