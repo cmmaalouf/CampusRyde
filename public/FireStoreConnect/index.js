@@ -83,6 +83,7 @@ $("#loginSubmit").on("click", function(event) {
     var user = snapshot.val();
     var key = Object.keys(user)[0];
     if (user[key].pwd != newPassword){
+      document.getElementById("invalid-msg").class = "text-muted text-danger";
       event.preventDefault();
     }
 
