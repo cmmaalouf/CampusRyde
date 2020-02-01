@@ -79,7 +79,7 @@ $("#loginSubmit").on("click", function(event) {
   var newFirstName = $("#userPassword").val().trim();
 
 
-  var ref = database.ref("users");
+  var ref = database.ref();
   var  result = ref.child('users').orderByChild('email').once("value", function(snapshot) {
     console.log(snapshot.val());
     snapshot.forEach(function(data) {
