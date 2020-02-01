@@ -29,21 +29,6 @@
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 
-    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.min.js"></script>
-    <!-- Don't change the format for any other products. -->
-    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
-    <!-- etc. -->
-    <script>
-      // Initialize Firebase
-      var config = {
-        apiKey: "REMOVED",
-        authDomain: "REMOVED.firebaseapp.com",
-        databaseURL: "https://REMOVED.firebaseio.com",
-        storageBucket: "REMOVED.appspot.com"
-      };
-      firebase.initializeApp(config);
-    </script>
   <!-- Firebase Reference -->
   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
@@ -60,7 +45,7 @@
 <body>
   <div class="d-md-flex h-md-100 align-items-center">
 
-    <!-- First Half -->
+    <!-- First Half (map)-->
 
     <div class="col-md-6 p-0 bg-indigo h-md-100">
       <div class="text-white d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
@@ -68,13 +53,10 @@
           <h1 class="ml5">
             <span class="text-wrapper">
               <span class="line line1"></span>
-              <span class="letters letters-left font-weight-bold">Campus</span>
-              <span class="letters letters-right">Ryde</span>
+              <span class="letters letters-left font-weight-bold">MAP</span>
               <span class="line line2"></span>
             </span>
           </h1>
-          <br>
-          <h5>Save the World - Share a Ride!</h5>
         </div>
       </div>
     </div>
@@ -83,15 +65,38 @@
 
     <div class="col-md-6 p-0 bg-white h-md-100 loginarea">
       <div class="align-items-center h-md-100 p-5 justify-content-center">
-        <div class="centerPseudo my-auto" style="border: 1px solid black; padding: 20px; border-radius: 5px;">
-          <h3 class="text-center">Welcome to CampusRyde!</h3>
-          <div class="text-center">
-            <br>
-            <a class="btn btn-primary" href="/signup" role="button">Sign up</a>
-            <a class="btn btn-primary" href="/login" role="button">Login</a>
+        <div id="ridePrompt" class="my-auto" style="border: 1px solid black; padding: 20px; border-radius: 5px;">
+          <h3 class="text-center">Your Rides</h3>
+          <br>
+          <div class="card border-primary mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+<!--               <h4 class="card-title">Primary card title</h4> -->
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border-primary mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+<!--               <h4 class="card-title">Primary card title</h4> -->
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border-primary mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+<!--               <h4 class="card-title">Primary card title</h4> -->
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
+          </div>
+          <div class="card border-primary mb-3">
+            <div class="card-header">Header</div>
+            <div class="card-body">
+<!--               <h4 class="card-title">Primary card title</h4> -->
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
           </div>
         </div>
-
       </div>
     </div>
 
