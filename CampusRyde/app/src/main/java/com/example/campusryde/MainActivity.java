@@ -17,4 +17,9 @@ public class MainActivity extends AppCompatActivity {
     {
         setContentView(R.layout.activity_signup);
     }
+
+    public void toLogin(View view)
+    {
+        setContentView(R.layout.activity_main);
+    }
 }
