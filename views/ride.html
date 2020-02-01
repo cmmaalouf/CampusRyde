@@ -35,9 +35,6 @@
   <!-- Moment.js Reference -->
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
 
-  <script src="../FireStoreConnect/index.js" defer></script>
-
-
   <!-- import the webpage's stylesheet -->
   <link rel="stylesheet" href="/style.css">
 
@@ -48,7 +45,7 @@
 <body>
   <div class="d-md-flex h-md-100 align-items-center">
 
-    <!-- First Half -->
+    <!-- First Half (map)-->
 
     <div class="col-md-6 p-0 bg-indigo h-md-100">
       <div class="text-white d-md-flex align-items-center h-100 p-5 text-center justify-content-center">
@@ -56,13 +53,10 @@
           <h1 class="ml5">
             <span class="text-wrapper">
               <span class="line line1"></span>
-              <span class="letters letters-left font-weight-bold">Campus</span>
-              <span class="letters letters-right">Ryde</span>
+              <span class="letters letters-left font-weight-bold">MAP</span>
               <span class="line line2"></span>
             </span>
           </h1>
-          <br>
-          <h5>Save the World - Share a Ride!</h5>
         </div>
       </div>
     </div>
@@ -71,34 +65,55 @@
 
     <div class="col-md-6 p-0 bg-white h-md-100 loginarea">
       <div class="align-items-center h-md-100 p-5 justify-content-center">
-        <div class="my-auto" style="border: 1px solid black; padding: 20px; border-radius: 5px;">
-          <h3 class="text-center">Welcome to CampusRyde!</h3>
+        <div id="ridePrompt" class="my-auto" style="border: 1px solid black; padding: 20px; border-radius: 5px;">
+          <h3 class="text-center">Where to?</h3>
           <br>
           <form>
             <div class="form-group row">
-              <label class="col-sm-4 col-form-label col-form-label-sm" for="newEmail">College Email</label>
-              <input type="email" class="col-sm-7 form-control form-control-sm" id="newEmail" aria-describedby="emailHelp" placeholder="Email">
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-4 col-form-label col-form-label-sm" for="newFirstName">First Name</label>
-              <input type="text" class="col-sm-7 form-control form-control-sm" placeholder="First Name" id="newFirstName">
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-4 col-form-label col-form-label-sm" for="newLastName">Last Name</label>
-              <input type="text" class="col-sm-7 form-control form-control-sm" placeholder="Last Name" id="newLastName">
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-4 col-form-label col-form-label-sm" for="newPassword">Password</label>
-              <input type="password" class="col-sm-7 form-control form-control-sm" id="newPassword" placeholder="Password">
-            </div>
-            <div class="form-group row">
-              <label class="col-sm-4 col-form-label col-form-label-sm" for="newPasswordConfirm">Confirm Password</label>
-              <input type="password" class="col-sm-7 form-control form-control-sm" id="newPasswordConfirm" placeholder="Confirm Password">
+              <label class="col-sm-2 col-form-label col-form-label-sm" for="address">Address</label>
+              <input type="text" class="col-sm-9 form-control form-control-sm" placeholder="Ex: 123 Main Street, Baltimore, Maryland" id="address">
             </div>
           </form>
           <div class="text-center">
-            <a class="btn btn-secondary" href="/" role="button">Back</a>
-            <a class="btn btn-primary" id="submitUser" href="/ride" role="button">Submit</a>
+            <br>
+            <button id="driverButton" type="button" class="btn btn-success" style="margin-right: 10px;">Driver</button>
+            <a class="btn btn-info" href="/ride/board" role="button" style="margin-left: 10px;">Tagalong</a>
+<!--             <button type="button" class="btn btn-info" style="margin-left: 10px;">Tagalong</button> -->
+          </div>
+        </div>
+
+        <div id="driverPrompt" class="my-auto" style="border: 1px solid black; padding: 20px; border-radius: 5px;">
+          <h3 class="text-center">More info about you...</h3>
+          <br>
+          <form>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="plateNumber">License Plate Number</label>
+              <input type="text" class="col-sm-6 form-control form-control-sm" id="plateNumber" placeholder="License Plate Number">
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="driverLicense">Driver's Licence</label>
+              <input type="text" class="col-sm-6 form-control form-control-sm" placeholder="Driver's License" id="driverLicense">
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="departDate">Departure Date</label>
+              <input type="date" class="col-sm-6 form-control form-control-sm" id="departDate">
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="departTime">Departure Time</label>
+              <input type="time" class="col-sm-6 form-control form-control-sm" id="departTime">
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="numSeats">Available Seats</label>
+              <input type="number" class="col-sm-6 form-control form-control-sm" id="numSeats" placeholder="1">
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-5 col-form-label col-form-label-sm" for="other">Other Requirements</label>
+              <textarea class="col-sm-6 form-control form-control-sm" id="other" rows="3" placeholder="Contribute money for gas..."></textarea>
+            </div>
+          </form>
+          <div class="text-center">
+            <button id="driverBack" type="button" class="btn btn-secondary" style="margin-right: 10px;">Back</button>
+            <a class="btn btn-success" style="margin-left: 10px;" href="/ride/board" role="button">Submit</a>
           </div>
         </div>
       </div>

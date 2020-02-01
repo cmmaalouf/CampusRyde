@@ -9,6 +9,9 @@ lerna-debug.log*
 # Diagnostic reports (https://nodejs.org/api/report.html)
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
+
+astral-depth-266901-firebase-adminsdk-a395w-64c0c729e8.json
+
 # Runtime data
 pids
 *.pid
