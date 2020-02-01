@@ -89,6 +89,5 @@ $("#loginSubmit").on("click", function(event) {
 
 
 
-  // Clears all of the text-boxes
-  $("#text-value").innerText(result);
+
 });
