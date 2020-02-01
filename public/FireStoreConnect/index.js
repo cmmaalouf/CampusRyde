@@ -62,9 +62,9 @@ $("#submitUser").on("click", function(event) {
 
   // Clears all of the text-boxes
   $("#newEmail").val("");
-  $("#destination-input").val("");
-  $("#first-train-input").val("");
-  $("#frequency-input").val("");
+  $("#newFirstName").val("");
+  $("#newLastName").val("");
+  $("#newPassword").val("");
 });
 
 
@@ -80,7 +80,7 @@ $("#loginSubmit").on("click", function(event) {
 
 
   var ref = database.ref("users");
-  var  result = ref.child('users').orderByChild('name').equalTo('John Doe').on("value", function(snapshot) {
+  var  result = ref.child('users').orderByChild('email').equalTo(newEmail).on("value", function(snapshot) {
     console.log(snapshot.val());
     snapshot.forEach(function(data) {
         console.log(data.key);
