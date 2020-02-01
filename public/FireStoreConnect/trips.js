@@ -11,7 +11,7 @@ firebase.initializeApp(firebaseConfig);
 
 //New User
 var database = firebase.database();
-$("#submitUser").on("click", function(event) {
+$("#tripSubmit").on("click", function(event) {
   // Prevent the default form submit behavior
   event.preventDefault();
 
@@ -22,17 +22,17 @@ $("#submitUser").on("click", function(event) {
   var newPassword = $("#newPassword").val().trim();
 
   var newTrip = {
-    address: newAddress,
-    desc: newdesc,
-    coords: newCoords,
+    city: newCity,
+    state: newState,
+    coords: newCoords
     date: newDate,
     time: newTime
   };
 
   database.ref("trips").push(newTrip);
 
-  console.log(newTrip.address);
-  console.log(newTrip.desc);
+  console.log(newTrip.city);
+  console.log(newTrip.state);
   console.log(newTrip.coords);
   console.log(newTrip.date);
   console.log(newTrip.time);
