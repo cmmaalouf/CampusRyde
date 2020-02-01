@@ -2,6 +2,7 @@ package com.example.campusryde;
 
 import androidx.fragment.app.FragmentActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -57,4 +58,33 @@ public class MapsActivity2 extends AppCompatActivity implements OnMapReadyCallba
     {
         setContentView(R.layout.activity_settrip);
     }
+
+    public void createTrip2(View view)
+    {
+        //capture date
+
+        //capture time
+        setContentView(R.layout.activity_settrip2);
+    }
+
+    public void cancelTrip(View view){
+        Intent myintent = new Intent(this, MapsActivity2.class);
+        this.startActivity(myintent);
+    }
+
+    public void backToDate(View view){
+        setContentView(R.layout.activity_settrip);
+    }
+
+    public void submitTrip(View view){
+        //capture address
+        //capture num passengers
+        //capture meet loc
+
+
+        //firebase code to send everything to data base
+        cancelTrip(view);
+    }
+
+
 }

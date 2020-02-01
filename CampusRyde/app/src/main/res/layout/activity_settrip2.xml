@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+        android:id="@+id/setTrip"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="Set Trip"
+        android:textSize="50dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:textStyle="italic">
+    </TextView>
+    <Button
+        android:layout_width="75dp"
+        android:layout_height="50dp"
+        android:text="Back"
+        android:onClick="backToDate"
+        >
+
+    </Button>
+
+
+    <EditText
+        android:id="@+id/streetAddress"
+        style="@style/SignUpButtons"
+        android:hint="Street Address"
+        android:layout_below="@id/setTrip"
+        android:background="@color/colorPrimaryDark"
+        >
+    </EditText>
+
+    <EditText
+        android:id="@+id/city"
+        style="@style/SignUpButtons"
+        android:hint="City"
+        android:layout_below="@+id/streetAddress"
+        android:background="@color/colorPrimary">
+    </EditText>
+
+
+
+
+
+    <EditText
+        android:id="@+id/state"
+        style="@style/SignUpButtons"
+        android:hint="State"
+        android:background="@color/colorPrimaryDark"
+        android:layout_below="@+id/city">
+    </EditText>
+
+    <EditText
+        android:id="@+id/zipcode"
+        style="@style/SignUpButtons"
+        android:hint="Zipcode"
+        android:layout_below="@+id/state"
+        android:background="@color/colorPrimary">
+
+    </EditText>
+
+
+    <EditText
+        android:id="@+id/openSeats"
+        style="@style/SignUpButtons"
+        android:hint="How many Passengers?"
+        android:layout_below="@id/zipcode"
+        android:background="@color/colorPrimaryDark"
+        >
+    </EditText>
+
+   <EditText
+    android:id="@+id/meetLoc"
+    style="@style/SignUpButtons"
+    android:hint="Campus building for meet up"
+    android:layout_below="@id/openSeats"
+    android:background="@color/colorPrimary">
+</EditText>
+
+    <Button
+        android:id="@+id/signUpButton"
+        android:layout_width="200dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/meetLoc"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorPrimary"
+        android:onClick="submitTrip"
+        android:text="Set Trip!">
+
+    </Button>
+</RelativeLayout>
