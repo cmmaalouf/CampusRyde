@@ -33,7 +33,7 @@ firebase.initializeApp(firebaseConfig);
 
 var database = firebase.database();
 
-writeUserData("userId", "fname", "lname", "email", "pwd" )
+writeUserData("userId", "fname", "lname", "email", "pwd" );
 
 function writeUserData(userId, fname, lname, email, pwd ) {
   firebase.database().ref('users/' + userId).set({
