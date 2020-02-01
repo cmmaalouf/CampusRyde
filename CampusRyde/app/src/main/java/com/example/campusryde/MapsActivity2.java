@@ -3,6 +3,8 @@ package com.example.campusryde;
 import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
+import android.view.View;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
@@ -49,5 +51,10 @@ public class MapsActivity2 extends AppCompatActivity implements OnMapReadyCallba
         mMap.getMaxZoomLevel();
         mMap.addMarker(new MarkerOptions().position(hoya).title("Marker in Sydney"));
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(hoya,15));
+    }
+
+    public void createTrip(View view)
+    {
+        setContentView(R.layout.activity_settrip);
     }
 }
