@@ -85,7 +85,10 @@ $("#loginSubmit").on("click", function(event) {
       event.preventDefault();
     }
     else{
-    window.location.href = "/ride/?userId="+key;
+      app.get('/ride/:userId', function (req, res) {
+        res.send(req.params)
+      })
+    //window.location.href = "/ride/:userId";
     }
 });
 

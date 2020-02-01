@@ -30,9 +30,13 @@ app.get("/signup", function(request, response) {
   response.sendFile(__dirname + "/views/signup.html");
 });
 
-app.get("/ride/:", function(request, response) {
+app.get("/ride", function(request, response) {
   response.sendFile(__dirname + "/views/ride.html");
 });
+
+app.get('/ride/:userId', function (req, res) {
+  res.send(req.params)
+})
 
 app.get("/ride/board", function(request, response) {
   response.sendFile(__dirname + "/views/board.html");
