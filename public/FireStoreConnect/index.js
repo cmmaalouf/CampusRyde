@@ -79,21 +79,13 @@ $("#loginSubmit").on("click", function(event) {
   var newFirstName = $("#userPassword").val().trim();
 
 
-
-
   var ref = database.ref("users");
-  ref.orderByChild("email").limitToFirst().on("child_added", function(snapshot) {
+  var  result = ref.orderByChild("email").limitToFirst().on("child_added", function(snapshot) {
     console.log(snapshot.key);
   });
 
 
 
-  // Alert
-  alert("User successfully added");
-
   // Clears all of the text-boxes
-  $("#newEmail").val("");
-  $("#destination-input").val("");
-  $("#first-train-input").val("");
-  $("#frequency-input").val("");
+  $("#text-value").innerText(result);
 });
