@@ -79,16 +79,9 @@ $("#loginSubmit").on("click", function(event) {
   var newFirstName = $("#userPassword").val().trim();
 
 
-  var ref = database.ref("users");
-  var  result = ref.child('users').orderByChild('email').equalTo(newEmail).once("value", function(snapshot) {
-    console.log(snapshot.val());
-    snapshot.forEach(function(data) {
-        console.log(data.key);
-    });
+  var ref = database.ref(); ref.child('users').orderByChild('email').equalTo(newEmail).once("value", function(snapshot) {
+    console.log(type(snapshot));
+
 });
 
-
-
-  // Clears all of the text-boxes
-  $("#text-value").innerText(result);
 });
