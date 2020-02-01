@@ -24,6 +24,7 @@ var firebaseConfig = {
   apiKey: "AIzaSyBT3OJGVbazBLVUQm_YXQWZNN5rvmWwLjU",
   authDomain: "astral-depth-266901.firebaseapp.com",
   databaseURL: "https://astral-depth-266901.firebaseio.com",
+  projectId: "astral-depth-266901",
   storageBucket: "astral-depth-266901.appspot.com"
 };
 
