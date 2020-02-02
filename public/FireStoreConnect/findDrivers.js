@@ -36,7 +36,7 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
     console.log(dcity);
     var date = trip[keys[t]].departDate;
     var time = trip[keys[t]].departTime;
-    var seats = trip[keys[t]].numseats;
+    var seats = trip[keys[t]].numSeats;
     var driverId = trip[keys[t]].driverId;
     var fname = trip[keys[t]].fname;
     var driverEmail = trip[keys[t]].driverEmail;
