@@ -19,15 +19,15 @@ $("#tripSubmit").on("click", function(event) {
 
 
   // Grabs user input
-  var city = $("#city").val().trim();
-  var state = $("#state").val().trim();
-  var departDate = $("#departDate").val().trim();
-  var departTime = $("#departTime").val().trim();
-  var numSeats = $("#numSeats").val().trim();
-  var plateNum = $("#plateNumber").val().trim();
-  var driverLicense = $("#driverLicense").val().trim();
-  var userEmail = $("#userEmail");
-  var other = $("#other");
+  var newCity = $("#city").val().trim();
+  var newState = $("#state").val().trim();
+  var newDepartDate = $("#departDate").val().trim();
+  var newDepartTime = $("#departTime").val().trim();
+  var newNumSeats = $("#numSeats").val().trim();
+  var newPlateNum = $("#plateNumber").val().trim();
+  var newDriverLicense = $("#driverLicense").val().trim();
+  var newUserEmail = $("#userEmail");
+  var newOther = $("#other");
 
   var newTrip = {
     city: newCity,
