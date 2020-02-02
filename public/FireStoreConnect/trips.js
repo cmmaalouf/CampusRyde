@@ -16,34 +16,52 @@ $("#tripSubmit").on("click", function(event) {
   event.preventDefault();
 
   // Grabs user input
-
-  var newEmail = $("#newEmail").val().trim();
-  var newFirstName = $("#newFirstName").val().trim();
-  var newLastName = $("#newLastName").val().trim();
-  var newPassword = $("#newPassword").val().trim();
+  var city = $("#city").val().trim();
+  var state = $("#state").val().trim();
+  var departDate = $("#departDate").val().trim();
+  var departTime = $("#departTime").val().trim();
+  var numSeats = $("#numSeats").val().trim();
+  var plateNum = $("#plateNumber").val().trim();
+  var driverLicense = $("#driverLicense").val().trim();
+  var userEmail = $("#userEmail");
+  var other = $("#other');
 
   var newTrip = {
     city: newCity,
     state: newState,
-    coords: newCoords
-    date: newDate,
-    time: newTime
+    departDate: newDepartDate,
+    departTime: newDepartTime,
+    numSeats: newNumSeats,
+    plateNum: newPlateNum,
+    driverLicense = newDriverLicense,
+    userEmail = newUserEmail,
+    other = newOther
   };
 
   database.ref("trips").push(newTrip);
 
   console.log(newTrip.city);
   console.log(newTrip.state);
-  console.log(newTrip.coords);
-  console.log(newTrip.date);
-  console.log(newTrip.time);
+  console.log(newTrip.departDate);
+  console.log(newTrip.departTime);
+  console.log(newTrip.numSeats);
+  console.log(newTrip.plateNum);
+  console.log(newTrip.driverLicense);
+  console.log(newTrip.userEmail);
+  console.log(newTrip.other);
 
   // Alert
   alert("Trip successfully added");
 
   // Clears all of the text-boxes
-  $("#newEmail").val("");
-  $("#newFirstName").val("");
-  $("#newLastName").val("");
-  $("#newPassword").val("");
+  $("#city").val("");
+  $("#state").val("");
+  $("#departDate").val("");
+  $("#departTime").val("");
+  $("#numSeats").val("");
+  $("#plateNumber").val("");
+  $("#driverLicense").val("");
+  $("#userEmail").val("");
+  $("#other").val("");
+
 });
