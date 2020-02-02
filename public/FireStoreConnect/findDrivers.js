@@ -59,7 +59,8 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
     var cardFooter = $("<div>").addClass("card-footer");
     var reqButton = $("<button>").attr({
       type: "button",
-      id: driverId
+      id: driverId,
+      onclick: "rideRequest(this)"
     }).addClass("rideRequest btn btn-primary").text("Tag Along!");
 
     cardFooter.append(reqButton);
@@ -84,8 +85,9 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
 
 //}
 var spots;
-  $(".rideRequest").on("click", function(event) {
-  var dataID = this.attr("id");
+  //$("a.rideRequest").on("click", function(event) {
+  function rideRequest(btn){
+  var dataID = btn.attr("id");
 
   spots = $(".rideSpots[id='"+dataID+"']").text();
 
