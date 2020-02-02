@@ -14,7 +14,7 @@ var database = firebase.database();
 $("#tripSubmit").on("click", function(event) {
   // Prevent the default form submit behavior
   event.preventDefault();
-  console.log.
+  console.log(sessionStorage.getItem("userId"));
 
 
 
