@@ -50,18 +50,32 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
     var timeSpan = $("<span>").addClass("rideTime").attr("id", driverId).text(time);
     var dateSpan = $("<span>").addClass("rideDate").attr("id", driverId).text(date);
     var cardSubtitle = $("<h6>").addClass("card-subtitle text-muted");
-    var driverSpan = $("<span>").addClass("rideDriver").attr({id: driverId, 'data-mail': driverEmail}).text("Driver: "+ fname);
+    var driverSpan = $("<span>").addClass("rideDriver").attr({
+      id: driverId,
+      'data-mail': driverEmail
+    }).text("Driver: " + fname);
     var pText = $("<p>").addClass("card-text");
     var spotSpan = $("<span>").addClass("rideSports").attr("id", driverId).text(seats);
     var cardFooter = $("<div>").addClass("card-footer");
-    var reqButton = $("<button>").attr({type: "button", id: driverId}).addClass("rideRequest btn btn-primary").text("Tag Along!");
+    var reqButton = $("<button>").attr({
+      type: "button",
+      id: driverId
+    }).addClass("rideRequest btn btn-primary").text("Tag Along!");
 
     cardFooter.append(reqButton);
-    pText.append("Seats Remaining: "+ spotSpan);
+    pText.append("Seats Remaining: ");
+    pText.append(spotSpan);
     cardSubtitle.append(driverSpan);
-    cardTitle.append(timeSpan + ", " + dateSpan);
-    cardBody.append(cardTitle + cardSubtitle + "<br>" + pText);
-    card.append(header + cardBody + cardFooter);
+    cardTitle.append(timeSpan);
+    cardTitle.append(", ");
+    cardTitle.append(dateSpan);
+    cardBody.append(cardTitle);
+    cardBody.append(cardSubtitle);
+    cardBody.append("<br>");
+    cardBody.append(pText);
+    card.append(header);
+    card.append(cardBody);
+    card.append(cardFooter);
     $("#rideCards").append(card);
 
   }
