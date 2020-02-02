@@ -29,18 +29,6 @@ $("#tripSubmit").on("click", function(event) {
   var newUserEmail = $("#userEmail");
   var newOther = $("#other");
 
-
-
-
-
-  var users = database.ref();
-  ref.child('users').equalTo(sessionStorage.getItem("userId")).once("value", function(snapshot) {
-      var user = snapshot.val();
-      var key = Object.keys(user)[0];
-      sessionStorage.setItem("fname", user[key].fname);
-
-  });
-
 var newfname = sessionStorage.getItem("fname");
 
 var newTrip = {
