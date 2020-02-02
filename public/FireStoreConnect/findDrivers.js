@@ -52,7 +52,7 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
     var dateSpan = $("<span>").addClass("rideDate").attr("id", tripId).text(date);
     var cardSubtitle = $("<h6>").addClass("card-subtitle text-muted");
     var driverSpan = $("<span>").addClass("rideDriver").attr({
-      id: driverId,
+      id: tripId,
       'data-mail': driverEmail
     }).text("Driver: " + fname);
     var pText = $("<p>").addClass("card-text");
@@ -106,9 +106,9 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
     var dest = $(".rideDest[id='"+tripId+"']").text();
     var date = $(".rideDate[id='"+tripId+"']").text();
     var time = $(".rideTime[id='"+tripId+"']").text();
-    var driver = $(".rideDriver[id='"+driverId+"']").text();
+    var driver = $(".rideDriver[id='"+tripId+"']").text();
 
-    var dEmail = $(".rideDriver[id='"+driverId+"']").attr("data-mail"); //driver email
+    var dEmail = $(".rideDriver[id='"+tripId+"']").attr("data-mail"); //driver email
 
     var content = "<div><p>Dear user,</p><p>Hello, you have signed up for a ride "
     +"to "+ dest +" on "+date+" at "+time+". Your driver is "+driver+". Contact "+driver+" at "+dEmail
