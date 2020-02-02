@@ -16,13 +16,11 @@ public class MainActivity extends AppCompatActivity {
 
    public void signUp(View view)
     {
-        setContentView(R.layout.activity_signup);
+        Intent  newi = new Intent(this, SignUpActivity.class);
+    this.startActivity(newi);
     }
 
-    public void toLogin(View view)
-    {
-        setContentView(R.layout.activity_main);
-    }
+
 
     public void next( View view)
     {
