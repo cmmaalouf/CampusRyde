@@ -23,14 +23,12 @@ var db = firebase.database();
 //$("#search").on("click",function(event){
 //collect location
 //collect state
-//var city = $("#destination").val().trim()+ $("#state").val().trim();
-//var state = $("#state").val().trim();
-var city = $("#city").val().trim();
-var state = $("#state").val().trim();
+var city = sessionStorage.getItem("tagCity");
+var state = sessionStorage.getItem("tagState")
 
 //get all driver going to given state
 var ref = database.ref('trips');
-ref.orderByChild('state').equalTo("NJ").on("value", function(snapshot) {
+ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
   var trip = snapshot.val();
   var keys = Object.keys(trip);
   for (var t = 0; t < keys.length; t++) {
