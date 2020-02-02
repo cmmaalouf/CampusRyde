@@ -41,27 +41,28 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
     var fname = trip[keys[t]].fname;
     var driverEmail = trip[keys[t]].driverEmail;
 
+    var tripId = keys[t];
 
 
     var card = $("<div>").addClass("card border-primary mb-3");
-    var header = $("<h3>").addClass("card-header rideDest").attr("id", driverId).text(dcity);
+    var header = $("<h3>").addClass("card-header rideDest").attr("id", tripId).text(dcity);
     var cardBody = $("<div>").addClass("card-body");
     var cardTitle = $("<h5>").addClass("card-title");
-    var timeSpan = $("<span>").addClass("rideTime").attr("id", driverId).text(time);
-    var dateSpan = $("<span>").addClass("rideDate").attr("id", driverId).text(date);
+    var timeSpan = $("<span>").addClass("rideTime").attr("id", tripId).text(time);
+    var dateSpan = $("<span>").addClass("rideDate").attr("id", tripId).text(date);
     var cardSubtitle = $("<h6>").addClass("card-subtitle text-muted");
     var driverSpan = $("<span>").addClass("rideDriver").attr({
       id: driverId,
       'data-mail': driverEmail
     }).text("Driver: " + fname);
     var pText = $("<p>").addClass("card-text");
-    var spotSpan = $("<span>").addClass("rideSpots").attr("id", driverId).text(seats);
+    var spotSpan = $("<span>").addClass("rideSpots").attr("id", tripId).text(seats);
     var cardFooter = $("<div>").addClass("card-footer");
     var reqButton = $("<button>").attr({
       type: "button",
-      id: driverId,
+      id: tripId,
       onclick: "rideRequest(this)",
-      name: keys[t]
+      name: driverId
     }).addClass("rideRequest btn btn-primary").text("Tag Along!");
 
     cardFooter.append(reqButton);
@@ -88,26 +89,26 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
 //var spots;
   //$("a.rideRequest").on("click", function(event) {
   function rideRequest(btn){
-  var driverID = $(btn).attr("id");//btn.attr("id");
-  var dataId = $(btn).attr("name");
+  var tripId = $(btn).attr("id");//btn.attr("id");
+  var driverId = $(btn).attr("name");
 
-  var spots = $(".rideSpots[id='"+dataID+"']").text();
+  var spots = $(".rideSpots[id='"+tripId+"']").text();
 
   // spots = $("#rideSpots").text();
   if(spots>0) {
     spots-=1;
-    updateSeats(spots, dataId);
-    $(".rideSpots[id="+dataID+"]").text(spots);
+    updateSeats(spots, tripId);
+    $(".rideSpots[id="+tripId+"]").text(spots);
 
     //Send alerts to driver and rider
     var email = sessionStorage.getItem('email'); //user email
 
-    var dest = $(".rideDest[id='"+dataID+"']").text();
-    var date = $(".rideDate[id='"+dataID+"']").text();
-    var time = $(".rideTime[id='"+dataID+"']").text();
-    var driver = $(".rideDriver[id='"+dataID+"']").text();
+    var dest = $(".rideDest[id='"+tripId+"']").text();
+    var date = $(".rideDate[id='"+tripId+"']").text();
+    var time = $(".rideTime[id='"+tripId+"']").text();
+    var driver = $(".rideDriver[id='"+driverId+"']").text();
 
-    var dEmail = $(".rideDriver[id='"+dataID+"']").attr("data-mail"); //driver email
+    var dEmail = $(".rideDriver[id='"+driverId+"']").attr("data-mail"); //driver email
 
     var content = "<div><p>Dear user,</p><p>Hello, you have signed up for a ride "
     +"to "+ dest +" on "+date+" at "+time+". Your driver is "+driver+". Contact "+driver+" at "+dEmail
