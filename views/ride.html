@@ -47,20 +47,63 @@
 
   <!-- First Half (map)-->
 
-  <div class="split left">
-    <div class="centered">
-      <div class="text-white align-items-center text-center">
-        <div class="logoarea">
-          <h1 class="ml5">
-            <span class="text-wrapper">
-              <span class="line line1"></span>
-              <span class="letters letters-left font-weight-bold">Post A Trip</span>
-              <span class="line line2"></span>
-            </span>
-          </h1>
-        </div>
-      </div>
+  <div class="split left2">
+    <div id="floating-panel" style="visibility: hidden;">
+      <script>
+        function destinationFind(city, state) {
+          return "\"" + city + ", " + state + "\"";
+        }
+        window.onload = function () {
+          document.getElementById('submit').click();
+        }
+      </script>
     </div>
+    <input style="visibility: hidden;" type="hidden" id="address" value=destinationFind("Baltimore","MD")>
+    <input style="visibility: hidden;" id="submit">
+    <div id="map" style="width: 100%; height: 100%; position: absolute;"></div>
+    <script>
+
+
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: { lat: -34.397, lng: 150.644 }
+        });
+        var geocoder = new google.maps.Geocoder();
+        document.getElementById('submit').addEventListener('click', function () {
+          geocodeAddress(geocoder, map);
+        });
+      }
+
+
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({ 'address': address }, function (results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location,
+              icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                fillColor: '#AAAAAA',
+                fillOpacity: 0.8,
+                strokeColor: '#000000',
+                strokeOpacity: 0.9,
+                strokeWeight: 1,
+                scale: 8
+              }
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBT3OJGVbazBLVUQm_YXQWZNN5rvmWwLjU&callback=initMap">
+      </script>
   </div>
 
 
@@ -85,7 +128,8 @@
         <div class="text-center">
           <br>
           <button id="driverButton" type="button" class="btn btn-success" style="margin-right: 10px;">Driver</button>
-          <a class="btn btn-info" href="/ride/board" role="button" style="margin-left: 10px;">Tagalong</a>
+          <a id="tagSubmit" class="btn btn-info" href="/ride/board" role="button"
+            style="margin-left: 10px;">Tagalong</a>
           <!--             <button type="button" class="btn btn-info" style="margin-left: 10px;">Tagalong</button> -->
         </div>
       </div>
@@ -94,7 +138,7 @@
         <h3 class="text-center">More info about you...</h3>
         <br>
         <form>
-          
+
           <div class="form-group row">
             <label class="col-sm-5 col-form-label col-form-label-sm" for="plateNumber">License Plate Number</label>
             <input type="text" class="col-sm-6 form-control form-control-sm" id="plateNumber"
@@ -125,8 +169,7 @@
         </form>
         <div class="text-center">
           <button id="driverBack" type="button" class="btn btn-secondary" style="margin-right: 10px;">Back</button>
-          <a class="btn btn-success" style="margin-left: 10px;" id="tripSubmit" href="/ride/board"
-            role="button">Submit</a>
+          <a class="btn btn-success" style="margin-left: 10px;" id="tripSubmit" href="/ride" role="button">Submit</a>
         </div>
       </div>
     </div>

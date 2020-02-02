@@ -29,19 +29,8 @@ $("#tripSubmit").on("click", function(event) {
   var newUserEmail = $("#userEmail");
   var newOther = $("#other");
 
-
-
-
-
-  var users = database.ref();
-  ref.child('users').equalTo(sessionStorage.getItem("userId")).once("value", function(snapshot) {
-      var user = snapshot.val();
-      var key = Object.keys(user)[0];
-      sessionStorage.setItem("fname", user[key].fname);
-
-  });
-
 var newfname = sessionStorage.getItem("fname");
+
 
 var newTrip = {
   city: newCity,
@@ -52,6 +41,7 @@ var newTrip = {
   plateNum: newPlateNum,
   driverLicense: newDriverLicense,
   driverId: sessionStorage.getItem('userId'),
+  driverEmail: sessionStorage.getItem('email'),
   fname: newfname,
   other: newOther
 };
@@ -67,4 +57,12 @@ alert("Trip successfully added");
 
 $("#city").val(""); $("#state").val(""); $("#departDate").val(""); $("#departTime").val(""); $("#numSeats").val(""); $("#plateNumber").val(""); $("#driverLicense").val(""); $("#userEmail").val(""); $("#other").val("");
 
+});
+
+
+$("#tagSubmit").on("click", function(event) {
+var city = $("#city").val().trim();
+var state = $("#state").val().trim();
+sessionStorage.setItem("tagCity", city);
+sessionStorage.setItem("tagState", state)
 });

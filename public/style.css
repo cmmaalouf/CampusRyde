@@ -12,6 +12,10 @@
   padding-top: 20px;
 }
 
+.left2 {
+  left: 0;
+}
+
 /* Control the left side */
 .left {
   left: 0;
@@ -99,3 +103,29 @@ margin-left: -0.1em;
 display: inline-block;
 opacity: 0;
 }
+
+html, body, #map, .define {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+
+/* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+
+      /* Optional: Makes the sample page fill the window. */
+
+      #floating-panel {
+        position: absolute;
+        top: 10px;
+        left: 25%;
+        z-index: 5;
+        background-color: #fff;
+        padding: 5px;
+        border: 1px solid #999;
+        text-align: center;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
