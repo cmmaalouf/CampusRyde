@@ -14,6 +14,8 @@ var database = firebase.database();
 $("#tripSubmit").on("click", function(event) {
   // Prevent the default form submit behavior
   event.preventDefault();
+  if(sessionStorage.getItem("userId") != NULL){
+
 
   // Grabs user input
   var city = $("#city").val().trim();
@@ -54,6 +56,7 @@ $("#tripSubmit").on("click", function(event) {
   alert("Trip successfully added");
 
   // Clears all of the text-boxes
+<<<<<<< HEAD
   $("#city").val("");
   $("#state").val("");
   $("#departDate").val("");
@@ -65,3 +68,10 @@ $("#tripSubmit").on("click", function(event) {
   $("#other").val("");
 
 });
+=======
+  $("#newEmail").val("");
+  $("#newFirstName").val("");
+  $("#newLastName").val("");
+  $("#newPassword").val("");
+}});
+>>>>>>> bda9f9183c15189bdec40e46df6b4e21ff8f2bcf
