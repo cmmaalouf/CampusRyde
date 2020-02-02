@@ -37,7 +37,8 @@ $("#tripSubmit").on("click", function(event) {
       var user = snapshot.val();
       var key = Object.keys(user)[0];
       newfname = key;
-      }
+      console.log(newfname);
+
   });
 
 
