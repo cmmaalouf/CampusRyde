@@ -29,11 +29,11 @@ var state = sessionStorage.getItem("tagState")
 //get all driver going to given state
 var ref = database.ref('trips');
 ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
+  $("#rideCards").innerHTML = "";
   var trip = snapshot.val();
   var keys = Object.keys(trip);
   for (var t = 0; t < keys.length; t++) {
     var dcity = trip[keys[t]].city;
-    console.log(dcity);
     var date = trip[keys[t]].departDate;
     var time = trip[keys[t]].departTime;
     var seats = trip[keys[t]].numSeats;
