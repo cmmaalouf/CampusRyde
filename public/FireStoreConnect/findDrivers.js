@@ -67,9 +67,9 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
     pText.append("Seats Remaining: ");
     pText.append(spotSpan);
     cardSubtitle.append(driverSpan);
-    cardTitle.append(timeSpan);
-    cardTitle.append(", ");
     cardTitle.append(dateSpan);
+    cardTitle.append(", ");
+    cardTitle.append(timeSpan);
     cardBody.append(cardTitle);
     cardBody.append(cardSubtitle);
     cardBody.append("<br>");
