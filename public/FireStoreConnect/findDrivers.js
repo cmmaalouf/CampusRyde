@@ -60,7 +60,8 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
     var reqButton = $("<button>").attr({
       type: "button",
       id: driverId,
-      onclick: "rideRequest(this)"
+      onclick: "rideRequest(this)",
+      name: keys[t]
     }).addClass("rideRequest btn btn-primary").text("Tag Along!");
 
     cardFooter.append(reqButton);
@@ -88,13 +89,14 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
   //$("a.rideRequest").on("click", function(event) {
   function rideRequest(btn){
   var dataID = $(btn).attr("id");//btn.attr("id");
- console.log(btn);
+  var tripId = $(btn).attr("name");
+
   var spots = $(".rideSpots[id='"+dataID+"']").text();
 
   // spots = $("#rideSpots").text();
   if(spots>0) {
     spots-=1;
-    updateSeats(dataID, spots);
+    updateSeats(spots, tripId);
     $(".rideSpots[id="+dataID+"]").text(spots);
 
     //Send alerts to driver and rider
@@ -120,9 +122,9 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
   }
 }
 
-function updateSeats(dataID,left) {
+function updateSeats(left, tripId) {
   var updates = {};
-  updates['/trips/' + dataID + '/numSeats'] = left;
+  updates['/trips/' + tripId+ '/numSeats'] = left;
   console.log("seats inside")
   return firebase.database().ref().update(updates);
 }
