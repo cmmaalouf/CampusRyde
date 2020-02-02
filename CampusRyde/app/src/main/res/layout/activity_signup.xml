@@ -67,6 +67,7 @@
         style="@style/SignUpButtons"
         android:hint="Password"
         android:layout_below="@id/schoolName"
+        android:inputType="textPassword"
         android:background="@color/colorPrimaryDark"
         >
     </EditText>
