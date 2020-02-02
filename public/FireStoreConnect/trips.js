@@ -58,3 +58,11 @@ alert("Trip successfully added");
 $("#city").val(""); $("#state").val(""); $("#departDate").val(""); $("#departTime").val(""); $("#numSeats").val(""); $("#plateNumber").val(""); $("#driverLicense").val(""); $("#userEmail").val(""); $("#other").val("");
 
 });
+
+
+$("#tagSubmit").on("click", function(event) {
+var city = $("#city").val().trim();
+var state = $("#state").val().trim();
+sessionStorage.setItem("tagCity", city);
+sessionStorage.setItem("tagState", state)
+});
