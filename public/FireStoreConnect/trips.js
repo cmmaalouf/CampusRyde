@@ -26,7 +26,7 @@ $("#tripSubmit").on("click", function(event) {
   var plateNum = $("#plateNumber").val().trim();
   var driverLicense = $("#driverLicense").val().trim();
   var userEmail = $("#userEmail");
-  var other = $("#other');
+  var other = $("#other");
 
   var newTrip = {
     city: newCity,
