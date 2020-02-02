@@ -88,7 +88,7 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
   //$("a.rideRequest").on("click", function(event) {
   function rideRequest(btn){
   var dataID = btn.id;//btn.attr("id");
-
+ console.log.btn;
   var spots = $(".rideSpots[id='"+dataID+"']").text();
 
   // spots = $("#rideSpots").text();
