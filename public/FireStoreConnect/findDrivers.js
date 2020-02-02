@@ -29,7 +29,7 @@ var state = sessionStorage.getItem("tagState")
 //get all driver going to given state
 var ref = database.ref('trips');
 ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
-  $("#rideCards").innerHTML = "";
+  $("#rideCards").empty();
   var trip = snapshot.val();
   var keys = Object.keys(trip);
   for (var t = 0; t < keys.length; t++) {
