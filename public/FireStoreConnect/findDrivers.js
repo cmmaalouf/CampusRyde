@@ -43,7 +43,6 @@ ref.orderByChild('state').equalTo("NJ").on("value", function(snapshot) {
     var driverEmail = trip[keys[t]].driverEmail;
 
 
-
   }
 
 });
