@@ -14,7 +14,8 @@ var database = firebase.database();
 $("#tripSubmit").on("click", function(event) {
   // Prevent the default form submit behavior
   event.preventDefault();
-  if(sessionStorage.getItem("userId") != NULL){
+  console.log.
+
 
 
   // Grabs user input
@@ -36,7 +37,7 @@ $("#tripSubmit").on("click", function(event) {
     numSeats: newNumSeats,
     plateNum: newPlateNum,
     driverLicense: newDriverLicense,
-    userEmail: newUserEmail,
+    userEmail: sessionStorage.getItem('userId'),
     other: newOther
   };
 
@@ -66,5 +67,5 @@ $("#tripSubmit").on("click", function(event) {
   $("#driverLicense").val("");
   $("#userEmail").val("");
   $("#other").val("");
-}
+
 });
