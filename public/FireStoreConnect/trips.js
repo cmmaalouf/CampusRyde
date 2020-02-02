@@ -33,54 +33,38 @@ $("#tripSubmit").on("click", function(event) {
 
 
 
-  var users = database.ref('users');
-  users.equalTo(sessionStorage.getItem("userId")).once("value", function(snapshot) {
-    var user = snapshot.val();
-    var key = Object.keys(user)[0];
-    sessionStorage.setItem("fname", user[key].fname);
+  var users = database.ref();
+  ref.child('users').equalTo(sessionStorage.getItem("userId")).once("value", function(snapshot) {
+      var user = snapshot.val();
+      var key = Object.keys(user)[0];
+      sessionStorage.setItem("fname", user[key].fname);
 
   });
 
-  var newfname = sessionStorage.getItem("fname");
+var newfname = sessionStorage.getItem("fname");
 
-  var newTrip = {
-    city: newCity,
-    state: newState,
-    departDate: newDepartDate,
-    departTime: newDepartTime,
-    numSeats: newNumSeats,
-    plateNum: newPlateNum,
-    driverLicense: newDriverLicense,
-    driverId: sessionStorage.getItem('userId'),
-    fname: newfname,
-    other: newOther
-  };
+var newTrip = {
+  city: newCity,
+  state: newState,
+  departDate: newDepartDate,
+  departTime: newDepartTime,
+  numSeats: newNumSeats,
+  plateNum: newPlateNum,
+  driverLicense: newDriverLicense,
+  driverId: sessionStorage.getItem('userId'),
+  fname: newfname,
+  other: newOther
+};
 
-  database.ref("trips").push(newTrip);
+database.ref("trips").push(newTrip);
 
-  console.log(newTrip.city);
-  console.log(newTrip.state);
-  console.log(newTrip.departDate);
-  console.log(newTrip.departTime);
-  console.log(newTrip.numSeats);
-  console.log(newTrip.plateNum);
-  console.log(newTrip.driverLicense);
-  console.log(newTrip.userEmail);
-  console.log(newTrip.other);
+console.log(newTrip.city); console.log(newTrip.state); console.log(newTrip.departDate); console.log(newTrip.departTime); console.log(newTrip.numSeats); console.log(newTrip.plateNum); console.log(newTrip.driverLicense); console.log(newTrip.userEmail); console.log(newTrip.other);
 
-  // Alert
-  alert("Trip successfully added");
+// Alert
+alert("Trip successfully added");
 
-  // Clears all of the text-boxes
+// Clears all of the text-boxes
 
-  $("#city").val("");
-  $("#state").val("");
-  $("#departDate").val("");
-  $("#departTime").val("");
-  $("#numSeats").val("");
-  $("#plateNumber").val("");
-  $("#driverLicense").val("");
-  $("#userEmail").val("");
-  $("#other").val("");
+$("#city").val(""); $("#state").val(""); $("#departDate").val(""); $("#departTime").val(""); $("#numSeats").val(""); $("#plateNumber").val(""); $("#driverLicense").val(""); $("#userEmail").val(""); $("#other").val("");
 
 });
