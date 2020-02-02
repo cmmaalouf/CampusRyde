@@ -35,9 +35,9 @@ $("#tripSubmit").on("click", function(event) {
     departTime: newDepartTime,
     numSeats: newNumSeats,
     plateNum: newPlateNum,
-    driverLicense = newDriverLicense,
-    userEmail = newUserEmail,
-    other = newOther
+    driverLicense: newDriverLicense,
+    userEmail: newUserEmail,
+    other: newOther
   };
 
   database.ref("trips").push(newTrip);
@@ -66,5 +66,5 @@ $("#tripSubmit").on("click", function(event) {
   $("#driverLicense").val("");
   $("#userEmail").val("");
   $("#other").val("");
-
+}
 });
