@@ -88,15 +88,15 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
 //var spots;
   //$("a.rideRequest").on("click", function(event) {
   function rideRequest(btn){
-  var dataID = $(btn).attr("id");//btn.attr("id");
-  var tripId = $(btn).attr("name");
+  var driverID = $(btn).attr("id");//btn.attr("id");
+  var dataId = $(btn).attr("name");
 
   var spots = $(".rideSpots[id='"+dataID+"']").text();
 
   // spots = $("#rideSpots").text();
   if(spots>0) {
     spots-=1;
-    updateSeats(spots, tripId);
+    updateSeats(spots, dataId);
     $(".rideSpots[id="+dataID+"]").text(spots);
 
     //Send alerts to driver and rider
