@@ -95,7 +95,7 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
   if(spots>0) {
     spots-=1;
     updateSeats(dataID, spots);
-    $(".rideSpots[id='"+dataID+"']").text(spots);
+    $(".rideSpots[id="+dataID+"]").text(spots);
 
     //Send alerts to driver and rider
     var email = sessionStorage.getItem('email'); //user email
