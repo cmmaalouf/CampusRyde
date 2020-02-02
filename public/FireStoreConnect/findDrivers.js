@@ -122,7 +122,7 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
 
 function updateSeats(dataID,left) {
   var updates = {};
-  updates['/trips/' + dataID + '/' + numSeats] = left;
+  updates['/trips/' + dataID + '/numSeats'] = left;
   console.log("seats inside")
   return firebase.database().ref().update(updates);
 }
