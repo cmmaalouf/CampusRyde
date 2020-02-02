@@ -2,7 +2,7 @@
 ## Save the World, Share a Ride!
 The ride board web and Andriod application connecting to you to fellow students in an effort to reduce carbon emissions.
 
-##Inspiration
+## Inspiration
 In an effort to reduce our carbon footprint, we wanted to connect students together in a fun social way. Student drivers planning to drive home can post a trip to CampusRyde, and other students can tag-along, or find drivers headed in their intended direction.
 
 ## What we learned
