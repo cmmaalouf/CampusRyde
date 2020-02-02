@@ -118,7 +118,7 @@ var spots;
   } else {
     alert("Sorry, ride is full!")
   }
-});
+}
 
 function updateSeats(dataID,left) {
   var updates = {};
