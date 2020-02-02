@@ -55,7 +55,7 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
       'data-mail': driverEmail
     }).text("Driver: " + fname);
     var pText = $("<p>").addClass("card-text");
-    var spotSpan = $("<span>").addClass("rideSports").attr("id", driverId).text(seats);
+    var spotSpan = $("<span>").addClass("rideSpots").attr("id", driverId).text(seats);
     var cardFooter = $("<div>").addClass("card-footer");
     var reqButton = $("<button>").attr({
       type: "button",
