@@ -40,6 +40,7 @@ var newTrip = {
   plateNum: newPlateNum,
   driverLicense: newDriverLicense,
   driverId: sessionStorage.getItem('userId'),
+  driverEmail: sessionStorage.setItem('email'),
   fname: newfname,
   other: newOther
 };
