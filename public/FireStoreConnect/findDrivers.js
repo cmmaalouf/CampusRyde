@@ -83,3 +83,44 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
 });
 
 //}
+var spots;
+$(".rideRequest").click(function() {
+  var dataID = this.attr("id");
+
+  spots = $(".rideSpots[id='"+dataID+"']").text();
+
+  // spots = $("#rideSpots").text();
+  if(spots>0) {
+    spots-=1;
+    updateSeats(dataID, spots);
+    $(".rideSpots[id='"+dataID+"']").text(spots);
+
+    //Send alerts to driver and rider
+    var email = sessionStorage.getItem('email'); //user email
+
+    var dest = $(".rideDest[id='"+dataID+"']").text();
+    var date = $(".rideDate[id='"+dataID+"']").text();
+    var time = $(".rideTime[id='"+dataID+"']").text();
+    var driver = $(".rideDriver[id='"+dataID+"']").text();
+
+    var dEmail = $(".rideDriver[id='"+dataID+"']").attr("data-mail"); //driver email
+
+    var content = "<div><p>Dear user,</p><p>Hello, you have signed up for a ride "
+    +"to "+ dest +" on "+date+" at "+time+". Your driver is "+driver+". Contact "+driver+" at "+dEmail
+    +" to confirm your ride and for further information. Thank you for choosing CampusRyde. We "
+    +"hope you have a great trip!</p><p>Sincerely,<br>CampusRyde Administrators</p></div>";
+    window.location.href =
+      "http://us-central1-REMOVED.cloudfunctions.net/sendMail?dest="
+      + email + "&content=" + content;
+
+  } else {
+    alert("Sorry, ride is full!")
+  }
+});
+
+function updateSeats(dataID,left) {
+  var updates = {};
+  updates['/trips/' + dataID + '/' + numSeats] = left;
+  console.log("seats inside")
+  return firebase.database().ref().update(updates);
+}
