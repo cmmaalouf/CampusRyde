@@ -89,6 +89,7 @@ $("#loginSubmit").on("click", function(event) {
     else{
     sessionStorage.setItem('userId', key);
     sessionStorage.setItem('fname', user[key].fname )
+    sessionStorage.setItem('email', user[key].email)
     window.location.href = "/ride";
 
     }

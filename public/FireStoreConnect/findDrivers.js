@@ -20,10 +20,6 @@ firebase.initializeApp(firebaseConfig);
 var database = firebase.database();
 var db = firebase.database();
 
-var email = db.ref('users/' + driverId);
-email.on('value', function(snapshot) {
-  console.log(snapshot.val())
-});
 //$("#search").on("click",function(event){
 //collect location
 //collect state
@@ -44,7 +40,7 @@ ref.orderByChild('state').equalTo("NJ").on("value", function(snapshot) {
     var seats = trip[keys[t]].numseats;
     var driverId = trip[keys[t]].driverId;
     var fname = trip[keys[t]].fname;
-
+    var driverEmail = trip[keys[t]].driverEmail;
 
 
 
