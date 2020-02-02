@@ -25,8 +25,9 @@ var db = firebase.database();
 //collect state
 //var city = $("#destination").val().trim()+ $("#state").val().trim();
 //var state = $("#state").val().trim();
-var city = 'Bayville';
-var state = 'NJ'
+var city = $("#city").val().trim();
+var state = $("#state").val().trim();
+
 //get all driver going to given state
 var ref = database.ref('trips');
 ref.orderByChild('state').equalTo("NJ").on("value", function(snapshot) {
@@ -42,6 +43,28 @@ ref.orderByChild('state').equalTo("NJ").on("value", function(snapshot) {
     var fname = trip[keys[t]].fname;
     var driverEmail = trip[keys[t]].driverEmail;
 
+
+
+    var card = $("<div>").addClass("card border-primary mb-3");
+    var header = $("<h3>").addClass("card-header rideDest").attr("id", driverId).text(dcity);
+    var cardBody = $("<div>").addClass("card-body");
+    var cardTitle = $("<h5>").addClass("card-title");
+    var timeSpan = $("<span>").addClass("rideTime").attr("id", driverId).text(time);
+    var dateSpan = $("<span>").addClass("rideDate").attr("id", driverId).text(date);
+    var cardSubtitle = $("<h6>").addClass("card-subtitle text-muted");
+    var driverSpan = $("<span>").addClass("rideDriver").attr({id: driverId, 'data-mail': driverEmail}).text("Driver: "+ fname);
+    var pText = $("<p>").addClass("card-text");
+    var spotSpan = $("<span>").addclass("rideSports").attr("id", driverId).text(seats);
+    var cardFooter = $("<div>").addClass("card-footer");
+    var reqButton = $("<button>").attr({type: "button", id: driverId}).addClass("rideRequest btn btn-primary").text("Tag Along!");
+
+    cardFooter.append(reqButton);
+    pText.append("Seats Remaining: "+ spotSpan);
+    cardSubtitle.append(driverSpan);
+    cardTitle.append(timeSpan + ", " + dateSpan);
+    cardBody.append(cardTitle + cardSubtitle + "<br>" + pText);
+    card.append(header + cardBody + cardFooter);
+    $("#rideCards").append(card);
 
   }
 

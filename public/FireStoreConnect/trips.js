@@ -31,6 +31,7 @@ $("#tripSubmit").on("click", function(event) {
 
 var newfname = sessionStorage.getItem("fname");
 
+
 var newTrip = {
   city: newCity,
   state: newState,
