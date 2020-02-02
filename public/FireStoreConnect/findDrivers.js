@@ -52,7 +52,7 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
     var cardSubtitle = $("<h6>").addClass("card-subtitle text-muted");
     var driverSpan = $("<span>").addClass("rideDriver").attr({id: driverId, 'data-mail': driverEmail}).text("Driver: "+ fname);
     var pText = $("<p>").addClass("card-text");
-    var spotSpan = $("<span>").addclass("rideSports").attr("id", driverId).text(seats);
+    var spotSpan = $("<span>").addClass("rideSports").attr("id", driverId).text(seats);
     var cardFooter = $("<div>").addClass("card-footer");
     var reqButton = $("<button>").attr({type: "button", id: driverId}).addClass("rideRequest btn btn-primary").text("Tag Along!");
 
