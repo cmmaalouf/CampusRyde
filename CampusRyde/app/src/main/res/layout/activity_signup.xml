@@ -67,6 +67,7 @@
         style="@style/SignUpButtons"
         android:hint="Password"
         android:layout_below="@id/schoolName"
+        android:inputType="textPassword"
         android:background="@color/colorPrimaryDark"
         >
     </EditText>
@@ -78,6 +79,7 @@
         android:layout_marginTop="30dp"
         android:layout_below="@+id/password"
         android:layout_centerHorizontal="true"
+        android:onClick="toLogin"
         android:background="@color/colorPrimary"
         android:text="Sign Up">
 
