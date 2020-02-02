@@ -37,7 +37,7 @@ $("#tripSubmit").on("click", function(event) {
     numSeats: newNumSeats,
     plateNum: newPlateNum,
     driverLicense: newDriverLicense,
-    userId: sessionStorage.getItem('userId'),
+    driverId: sessionStorage.getItem('userId'),
     other: newOther
   };
 
