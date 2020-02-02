@@ -18,7 +18,7 @@ firebase.initializeApp(firebaseConfig);
 
 
  var database = firebase.database();
-
+ var db = firebase.database();
 //$("#search").on("click",function(event){
 //collect location
 //collect state
@@ -30,25 +30,18 @@ var state = 'NJ'
 var ref = database.ref('trips');
 ref.orderByChild('state').equalTo("NJ").on("value", function(snapshot){
   var trip = snapshot.val();
-  for(t in Object.keys(trip))
+	var keys =Object.keys(trip);
+	for(var t=0; t<keys.length;t++)
   {
-	var dcity = t.city;
-	  console.log(trip);
-	var date = t.departDate;
-	var time = t.departTime;
-	var seats = t.numseats;
-	var driverId = t.driverId;
-	var fname;
-	  var driveRef = database.ref('users');
-	  var id = Object.keys(driveRef)[0];
-	  /*if id.equalTo(driverId).once("value", function(snapshot) {
-		      var user = snapshot.val();
-		      var key = Object.keys(user)[0];
-		      fname = user[key].fname;
-	  });
-		  console.log(fname); 
-		  */
-		  console.log(time);
+	var dcity = trip[keys[t]].city;
+	  console.log(dcity);
+	var date = trip[keys[t]].departDate;
+	var time = trip[keys[t]].departTime;
+	var seats = trip[keys[t]].numseats;
+	var driverId = trip[keys[t]].driverId;
+	var fname = trip[keys[t]].fname;	
+	  
+	  
 
 	}
 	
