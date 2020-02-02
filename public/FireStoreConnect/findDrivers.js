@@ -84,12 +84,12 @@ ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
 });
 
 //}
-var spots;
+//var spots;
   //$("a.rideRequest").on("click", function(event) {
   function rideRequest(btn){
   var dataID = btn.id;//btn.attr("id");
 
-  spots = $(".rideSpots[id='"+dataID+"']").text();
+  var spots = $(".rideSpots[id='"+dataID+"']").text();
 
   // spots = $("#rideSpots").text();
   if(spots>0) {
