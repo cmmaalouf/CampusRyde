@@ -123,3 +123,7 @@ anime.timeline({loop: true})
     easing: "easeOutExpo",
     delay: 100000
   });
+
+  var city = sessionStorage.getItem("tagCity");
+  var state = sessionStorage.getItem("tagState");
+  $("#address").attr("value", destinationFind(city, state))
