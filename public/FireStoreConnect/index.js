@@ -34,17 +34,18 @@ firebase.initializeApp(firebaseConfig);
 //New User
 var database = firebase.database();
 $("#submitUser").on("click", function(event) {
-  // Prevent the default form submit behavior
-  event.preventDefault();
+
 
   // Grabs user input
   var newEmail = $("#newEmail").val().trim();
+  var newSchool = $("#newSchool").val().trim();
   var newFirstName = $("#newFirstName").val().trim();
   var newLastName = $("#newLastName").val().trim();
   var newPassword = $("#newPassword").val().trim();
 
   var newUser = {
     email: newEmail,
+    school: newSchool,
     fname: newFirstName,
     lname: newLastName,
     pwd: newPassword
@@ -53,6 +54,7 @@ $("#submitUser").on("click", function(event) {
   database.ref("users").push(newUser);
 
   console.log(newUser.email);
+  console.log(newUser.school);
   console.log(newUser.fname);
   console.log(newUser.lname);
   console.log(newUser.pwd);
@@ -62,6 +64,7 @@ $("#submitUser").on("click", function(event) {
 
   // Clears all of the text-boxes
   $("#newEmail").val("");
+  $("#newSchool").val("");
   $("#newFirstName").val("");
   $("#newLastName").val("");
   $("#newPassword").val("");
@@ -71,9 +74,6 @@ $("#submitUser").on("click", function(event) {
 
 //login
 $("#loginSubmit").on("click", function(event) {
-  // Prevent the default form submit behavior
-  event.preventDefault();
-
   // Grabs user input
   var newEmail = $("#userEmail").val().trim();
   var newPassword = $("#userPassword").val().trim();
@@ -83,10 +83,16 @@ $("#loginSubmit").on("click", function(event) {
     var user = snapshot.val();
     var key = Object.keys(user)[0];
     if (user[key].pwd != newPassword){
-      document.getElementById("invalid-msg").class = "text-danger";
+      document.getElementById("invalid-msg").className = "text-danger";
       event.preventDefault();
     }
+    else{
+    sessionStorage.setItem('userId', key);
+    window.location.href = "/ride";
 
+    }
 });
+
+
 
 });
