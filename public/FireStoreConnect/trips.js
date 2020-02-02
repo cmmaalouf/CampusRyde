@@ -29,6 +29,19 @@ $("#tripSubmit").on("click", function(event) {
   var newUserEmail = $("#userEmail");
   var newOther = $("#other");
 
+
+  //login
+  var newfname = "TEST";
+
+  var ref = database.ref(); ref.child('users').orderByChild('email').equalTo(newEmail).once("value", function(snapshot) {
+      var user = snapshot.val();
+      var key = Object.keys(user)[0];
+      newfname = key;
+      }
+  });
+
+
+
   var newTrip = {
     city: newCity,
     state: newState,
@@ -38,6 +51,7 @@ $("#tripSubmit").on("click", function(event) {
     plateNum: newPlateNum,
     driverLicense: newDriverLicense,
     driverId: sessionStorage.getItem('userId'),
+    fname: newfname,
     other: newOther
   };
 
