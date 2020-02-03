@@ -4,7 +4,8 @@
 // init project
 const express = require("express");
 const app = express();
-const api = require('./api.js');
+
+require('dotenv').config();
 
 var firebase = require("firebase/app");
 
