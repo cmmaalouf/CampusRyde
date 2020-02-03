@@ -11,6 +11,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
 
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -41,7 +42,7 @@
   <!-- import the webpage's client-side javascript file -->
   <script src="/client.js" defer></script>
   <script src="/FireStoreConnect/findDrivers.js" defer>
-		</script>
+  </script>
 
 
 </head>
@@ -50,20 +51,63 @@
 
   <!-- First Half (map)-->
 
-  <div class="split left">
-    <div class="centered">
-      <div class="text-white align-items-center text-center">
-        <div class="logoarea">
-          <h1 class="ml5">
-            <span class="text-wrapper">
-              <span class="line line1"></span>
-              <span class="letters letters-left font-weight-bold">MAP</span>
-              <span class="line line2"></span>
-            </span>
-          </h1>
-        </div>
-      </div>
+  <div class="split left2">
+    <div id="floating-panel" style="visibility: hidden;">
+      <script>
+        function destinationFind(city, state) {
+          return "\"" + city + ", " + state + "\"";
+        }
+        window.onload = function () {
+          document.getElementById('submit').click();
+        }
+      </script>
     </div>
+    <input style="visibility: hidden;" type="hidden" id="address" value=destinationFind("Baltimore","MD")>
+    <input style="visibility: hidden;" id="submit">
+    <div id="map" style="width: 100%; height: 100%; position: absolute;"></div>
+    <script>
+
+
+
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: { lat: -34.397, lng: 150.644 }
+        });
+        var geocoder = new google.maps.Geocoder();
+        document.getElementById('submit').addEventListener('click', function () {
+          geocodeAddress(geocoder, map);
+        });
+      }
+
+
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({ 'address': address }, function (results, status) {
+          if (status === 'OK') {
+            resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location,
+              icon: {
+                path: google.maps.SymbolPath.CIRCLE,
+                fillColor: '#AAAAAA',
+                fillOpacity: 0.8,
+                strokeColor: '#000000',
+                strokeOpacity: 0.9,
+                strokeWeight: 1,
+                scale: 8
+              }
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+    </script>
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=REMOVED&callback=initMap">
+      </script>
   </div>
 
   <!-- Second Half -->
