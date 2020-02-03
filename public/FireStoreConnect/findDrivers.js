@@ -6,7 +6,7 @@
 
 // connect to firebase
 var firebaseConfig = {
-  //apiKey: "YOUR KEY HERE",
+  apiKey: "YOUR KEY HERE",
   authDomain: "REMOVED.firebaseapp.com",
   databaseURL: "https://REMOVED.firebaseio.com",
   projectId: "REMOVED",
@@ -28,7 +28,7 @@ var state = sessionStorage.getItem("tagState")
 
 //get all driver going to given state
 var ref = database.ref('trips');
-ref.orderByChild('state').equalTo(state).on("value", function (snapshot) {
+ref.orderByChild('state').equalTo(state).on("value", function(snapshot) {
   $("#rideCards").empty();
   var trip = snapshot.val();
   var keys = Object.keys(trip);
@@ -87,37 +87,33 @@ ref.orderByChild('state').equalTo(state).on("value", function (snapshot) {
 
 //}
 //var spots;
-//$("a.rideRequest").on("click", function(event) {
-function rideRequest(btn) {
+  //$("a.rideRequest").on("click", function(event) {
+  function rideRequest(btn){
   var tripId = $(btn).attr("id");//btn.attr("id");
   var driverId = $(btn).attr("name");
 
-  var spots = $(".rideSpots[id='" + tripId + "']").text();
+  var spots = $(".rideSpots[id='"+tripId+"']").text();
 
   // spots = $("#rideSpots").text();
-  if (spots > 0) {
-    spots -= 1;
+  if(spots>0) {
+    spots-=1;
     updateSeats(spots, tripId);
-    $(".rideSpots[id=" + tripId + "]").text(spots);
+    $(".rideSpots[id="+tripId+"]").text(spots);
 
     //Send alerts to driver and rider
     var email = sessionStorage.getItem('email'); //user email
 
-    var dest = $(".rideDest[id='" + tripId + "']").text();
-    var date = $(".rideDate[id='" + tripId + "']").text();
-    var time = $(".rideTime[id='" + tripId + "']").text();
-    var driver = $(".rideDriver[id='" + tripId + "']").text();
-    function test(words) {
-      var n = words.split(" ");
-      return n[n.length - 1];
-    }
-    driver = test(driver);
-    var dEmail = $(".rideDriver[id='" + tripId + "']").attr("data-mail"); //driver email
+    var dest = $(".rideDest[id='"+tripId+"']").text();
+    var date = $(".rideDate[id='"+tripId+"']").text();
+    var time = $(".rideTime[id='"+tripId+"']").text();
+    var driver = $(".rideDriver[id='"+tripId+"']").text();
+
+    var dEmail = $(".rideDriver[id='"+tripId+"']").attr("data-mail"); //driver email
 
     var content = "<div><p>Dear user,</p><p>Hello, you have signed up for a ride "
-      + "to " + dest + " on " + date + " at " + time + ". Your driver is " + driver + ". Contact " + driver + " at " + dEmail
-      + " to confirm your ride and for further information. Thank you for choosing CampusRyde. We "
-      + "hope you have a great trip!</p><p>Sincerely,<br>CampusRyde Administrators</p></div>";
+    +"to "+ dest +" on "+date+" at "+time+". Your driver is "+driver+". Contact "+driver+" at "+dEmail
+    +" to confirm your ride and for further information. Thank you for choosing CampusRyde. We "
+    +"hope you have a great trip!</p><p>Sincerely,<br>CampusRyde Administrators</p></div>";
     window.location.href =
       "http://us-central1-REMOVED.cloudfunctions.net/sendMail?dest="
       + email + "&content=" + content;
@@ -129,7 +125,7 @@ function rideRequest(btn) {
 
 function updateSeats(left, tripId) {
   var updates = {};
-  updates['/trips/' + tripId + '/numSeats'] = left;
+  updates['/trips/' + tripId+ '/numSeats'] = left;
   console.log("seats inside")
   return firebase.database().ref().update(updates);
 }
