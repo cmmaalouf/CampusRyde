@@ -1,5 +1,5 @@
 var firebaseConfig = {
-  apiKey: config.apikey,
+  apiKey: api.apikey,
   authDomain: "REMOVED.firebaseapp.com",
   databaseURL: "https://REMOVED.firebaseio.com",
   projectId: "REMOVED",
