@@ -6,11 +6,7 @@
 
 // connect to firebase
 var firebaseConfig = {
-<<<<<<< HEAD
-  apiKey: api.apikey,
-=======
-  apiKey: MY_API_KEY,
->>>>>>> parent of 2e3cb3d... hope 2
+  apiKey: process.env.MY_API_KEY,
   authDomain: "REMOVED.firebaseapp.com",
   databaseURL: "https://REMOVED.firebaseio.com",
   projectId: "REMOVED",
