@@ -6,11 +6,7 @@
 
 // connect to firebase
 var firebaseConfig = {
-<<<<<<< HEAD
-  apiKey: api.apikey,
-=======
-  apiKey: MY_API_KEY,
->>>>>>> parent of 2e3cb3d... hope 2
+  apiKey: process.env.MY_API_KEY,
   authDomain: "astral-depth-266901.firebaseapp.com",
   databaseURL: "https://astral-depth-266901.firebaseio.com",
   projectId: "astral-depth-266901",
