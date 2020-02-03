@@ -21,7 +21,7 @@ require("firebase/auth");
 require("firebase/firestore");
 */
 var firebaseConfig = {
-  apiKey: "YOUR KEY HERE",
+  apiKey: "MY_API_KEY",
   authDomain: "REMOVED.firebaseapp.com",
   databaseURL: "https://REMOVED.firebaseio.com",
   projectId: "REMOVED",
