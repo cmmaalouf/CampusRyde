@@ -4,6 +4,7 @@
 // init project
 const express = require("express");
 const app = express();
+const config = require('./config.js');
 
 var firebase = require("firebase/app");
 
