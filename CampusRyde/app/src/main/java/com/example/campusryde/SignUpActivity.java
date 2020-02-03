@@ -9,13 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 //import com.google.firebase.auth.FirebaseAuth;
 //import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DatabaseReference;
+//import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class SignUpActivity extends AppCompatActivity {
 
     //private FirebaseAuth mAuth;
-private DatabaseReference mDatabase;
+//private DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,17 +41,17 @@ private DatabaseReference mDatabase;
         EditText passwordText = findViewById(R.id.password);
         String password = passwordText.getText().toString();
 
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        //mDatabase = FirebaseDatabase.getInstance().getReference();
 
-        writeNewUser("skjfhsb", fname, lname, email, password);
-        //this.finish();
+        //writeNewUser("skjfhsb", fname, lname, email, password);
+        this.finish();
     }
 
-    private void writeNewUser(String userID, String fname, String lname, String email, String pass){
+   /* private void writeNewUser(String userID, String fname, String lname, String email, String pass){
         User user = new User(fname, lname, email, pass);
         Log.w("working", user.email);
         mDatabase.child("users").child("-C-0hJFov9CQMv4ji4xJ").setValue(user);
-    }
+    }*/
 
 }
 
