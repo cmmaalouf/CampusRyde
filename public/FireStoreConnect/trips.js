@@ -1,5 +1,5 @@
 var firebaseConfig = {
-  apiKey: config.apikey,
+  apiKey: api.apikey,
   authDomain: "astral-depth-266901.firebaseapp.com",
   databaseURL: "https://astral-depth-266901.firebaseio.com",
   projectId: "astral-depth-266901",
