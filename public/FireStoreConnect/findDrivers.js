@@ -6,7 +6,7 @@
 
 // connect to firebase
 var firebaseConfig = {
-  apiKey: "AIzaSyBT3OJGVbazBLVUQm_YXQWZNN5rvmWwLjU",
+  //apiKey: "YOUR KEY HERE",
   authDomain: "astral-depth-266901.firebaseapp.com",
   databaseURL: "https://astral-depth-266901.firebaseio.com",
   projectId: "astral-depth-266901",
